@@ -11,10 +11,16 @@
         <content type="html"><![CDATA[<p>giao我就不信了，明明按照步骤做的为筛子就不对</p><p><img src="/2021/08/23/test/image-20210811155339260.png" alt="测试图片"></p><p>捏吗的，这不是可以的吗，为什么隔壁的文章就显示不来？？</p><p>highlight测试</p><p>java</p><pre><code class="java">function Bing_show_category() &#123;    global $wpdb;    $request = &quot;SELECT $wpdb-&gt;terms.term_id, name FROM $wpdb-&gt;terms &quot;;    $request .= &quot; LEFT JOIN $wpdb-&gt;term_taxonomy ON $wpdb-&gt;term_taxonomy.term_id = $wpdb-&gt;terms.term_id &quot;;    $request .= &quot; WHERE $wpdb-&gt;term_taxonomy.taxonomy = &#39;category&#39; &quot;;    $request .= &quot; ORDER BY term_id asc&quot;;    $categorys = $wpdb-&gt;get_results($request);    foreach ($categorys as $category) &#123; //调用菜单        $output = &#39;&lt;span&gt;&#39;.$category-&gt;name.&quot;(&lt;em&gt;&quot;.$category-&gt;term_id.&#39;&lt;/em&gt;)&lt;/span&gt;&#39;;        echo $output;    &#125;&#125;</code></pre><p>C++</p><pre><code class="c++">#include &quot;stdafx.h&quot;#include &quot;myCalculator.h&quot;#define MAX_LOADSTRING 100// 全局变量:HINSTANCE hInst;                                // 当前实例WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名// 此代码模块中包含的函数的前向声明:ATOM                MyRegisterClass(HINSTANCE hInstance);BOOL                InitInstance(HINSTANCE, int);LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);int APIENTRY wWinMain(_In_ HINSTANCE hInstance,                     _In_opt_ HINSTANCE hPrevInstance,                     _In_ LPWSTR    lpCmdLine,                     _In_ int       nCmdShow)&#123;    UNREFERENCED_PARAMETER(hPrevInstance);    UNREFERENCED_PARAMETER(lpCmdLine);    // TODO: 在此处放置代码。</code></pre><p>python</p><pre><code class="python">import torch.nn.functional as Fimport torch.optim as optimimport matplotlib.pyplot as pltimport numpy as npimport sys#from pylab import *# --------------------准备数据集------------------# Dataset, DataLoadertransform = transforms.Compose(    [transforms.ToTensor(),     transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])trainset = torchvision.datasets.CIFAR10(root=&#39;./data&#39;, train=True,                                        download=True, transform=transform)testset = torchvision.datasets.CIFAR10(root=&#39;./data&#39;,train=False,                                       transform=transform, download=True)# 4张图为1份trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)testloader = DataLoader(dataset=testset, batch_size=4, shuffle=True, num_workers=0)classes = (&#39;plane&#39;, &#39;car&#39;, &#39;bird&#39;, &#39;cat&#39;, &#39;deer&#39;, &#39;dog&#39;, &#39;frog&#39;, &#39;horse&#39;, &#39;ship&#39;, &#39;truck&#39;)#dataiter = iter(trainloader)images, labels = dataiter.next()def imshow(img):   img = img /2+0.5     # 非标准的（unnormalized）   npimg = img.numpy()   plt.imshow(np.transpose(npimg, (1, 2, 0)))   plt.show()imshow(torchvision.utils.make_grid(images.detach().cpu().squeeze()))#plt.show()# print labelsprint(&#39; &#39;.join(&#39;%5s&#39;% classes[labels[j]] for j in range(4)))</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> 博客 </tag>
+            <tag> 搭建测试 </tag>
             
         </tags>
       

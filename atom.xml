@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>COOLGuysneverSleep</title>
+  
+  
+  <link href="https://heimdall-nss.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://heimdall-nss.github.io/"/>
+  <updated>2021-09-01T10:23:20.897Z</updated>
+  <id>https://heimdall-nss.github.io/</id>
+  
+  <author>
+    <name>NENEIIII</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://heimdall-nss.github.io/2021/08/23/test/"/>
+    <id>https://heimdall-nss.github.io/2021/08/23/test/</id>
+    <published>2021-08-23T02:49:50.000Z</published>
+    <updated>2021-09-01T10:23:20.897Z</updated>
+    
+    <content type="html"><![CDATA[<p>giao我就不信了，明明按照步骤做的为筛子就不对</p><p><img src="/2021/08/23/test/image-20210811155339260.png" alt="测试图片"></p><p>捏吗的，这不是可以的吗，为什么隔壁的文章就显示不来？？</p><p>highlight测试</p><p>java</p><pre><code class="java">function Bing_show_category() &#123;    global $wpdb;    $request = &quot;SELECT $wpdb-&gt;terms.term_id, name FROM $wpdb-&gt;terms &quot;;    $request .= &quot; LEFT JOIN $wpdb-&gt;term_taxonomy ON $wpdb-&gt;term_taxonomy.term_id = $wpdb-&gt;terms.term_id &quot;;    $request .= &quot; WHERE $wpdb-&gt;term_taxonomy.taxonomy = &#39;category&#39; &quot;;    $request .= &quot; ORDER BY term_id asc&quot;;    $categorys = $wpdb-&gt;get_results($request);    foreach ($categorys as $category) &#123; //调用菜单        $output = &#39;&lt;span&gt;&#39;.$category-&gt;name.&quot;(&lt;em&gt;&quot;.$category-&gt;term_id.&#39;&lt;/em&gt;)&lt;/span&gt;&#39;;        echo $output;    &#125;&#125;</code></pre><p>C++</p><pre><code class="c++">#include &quot;stdafx.h&quot;#include &quot;myCalculator.h&quot;#define MAX_LOADSTRING 100// 全局变量:HINSTANCE hInst;                                // 当前实例WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名// 此代码模块中包含的函数的前向声明:ATOM                MyRegisterClass(HINSTANCE hInstance);BOOL                InitInstance(HINSTANCE, int);LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);int APIENTRY wWinMain(_In_ HINSTANCE hInstance,                     _In_opt_ HINSTANCE hPrevInstance,                     _In_ LPWSTR    lpCmdLine,                     _In_ int       nCmdShow)&#123;    UNREFERENCED_PARAMETER(hPrevInstance);    UNREFERENCED_PARAMETER(lpCmdLine);    // TODO: 在此处放置代码。</code></pre><p>python</p><pre><code class="python">import torch.nn.functional as Fimport torch.optim as optimimport matplotlib.pyplot as pltimport numpy as npimport sys#from pylab import *# --------------------准备数据集------------------# Dataset, DataLoadertransform = transforms.Compose(    [transforms.ToTensor(),     transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])trainset = torchvision.datasets.CIFAR10(root=&#39;./data&#39;, train=True,                                        download=True, transform=transform)testset = torchvision.datasets.CIFAR10(root=&#39;./data&#39;,train=False,                                       transform=transform, download=True)# 4张图为1份trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)testloader = DataLoader(dataset=testset, batch_size=4, shuffle=True, num_workers=0)classes = (&#39;plane&#39;, &#39;car&#39;, &#39;bird&#39;, &#39;cat&#39;, &#39;deer&#39;, &#39;dog&#39;, &#39;frog&#39;, &#39;horse&#39;, &#39;ship&#39;, &#39;truck&#39;)#dataiter = iter(trainloader)images, labels = dataiter.next()def imshow(img):   img = img /2+0.5     # 非标准的（unnormalized）   npimg = img.numpy()   plt.imshow(np.transpose(npimg, (1, 2, 0)))   plt.show()imshow(torchvision.utils.make_grid(images.detach().cpu().squeeze()))#plt.show()# print labelsprint(&#39; &#39;.join(&#39;%5s&#39;% classes[labels[j]] for j in range(4)))</code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;giao我就不信了，明明按照步骤做的为筛子就不对&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2021/08/23/test/image-20210811155339260.png&quot; alt=&quot;测试图片&quot;&gt;&lt;/p&gt;
+&lt;p&gt;捏吗的，这不是可以的吗，为什么隔壁的文章就显示不来？？&lt;/p&gt;
+&lt;p&gt;highlight测试&lt;/p&gt;
+&lt;p&gt;java&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;function Bing_show_category() &amp;#123;
+    global $wpdb;
+    $request = &amp;quot;SELECT $wpdb-&amp;gt;terms.term_id, name FROM $wpdb-&amp;gt;terms &amp;quot;;
+    $request .= &amp;quot; LEFT JOIN $wpdb-&amp;gt;term_taxonomy ON $wpdb-&amp;gt;term_taxonomy.term_id = $wpdb-&amp;gt;terms.term_id &amp;quot;;
+    $request .= &amp;quot; WHERE $wpdb-&amp;gt;term_taxonomy.taxonomy = &amp;#39;category&amp;#39; &amp;quot;;
+    $request .= &amp;quot; ORDER BY term_id asc&amp;quot;;
+    $categorys = $wpdb-&amp;gt;get_results($request);
+    foreach ($categorys as $category) &amp;#123; //调用菜单
+        $output = &amp;#39;&amp;lt;span&amp;gt;&amp;#39;.$category-&amp;gt;name.&amp;quot;(&amp;lt;em&amp;gt;&amp;quot;.$category-&amp;gt;term_id.&amp;#39;&amp;lt;/em&amp;gt;)&amp;lt;/span&amp;gt;&amp;#39;;
+        echo $output;
+    &amp;#125;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;C++&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;c++&quot;&gt;#include &amp;quot;stdafx.h&amp;quot;
+#include &amp;quot;myCalculator.h&amp;quot;
+
+#define MAX_LOADSTRING 100
+
+// 全局变量:
+HINSTANCE hInst;                                // 当前实例
+WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本
+WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
+
+// 此代码模块中包含的函数的前向声明:
+ATOM                MyRegisterClass(HINSTANCE hInstance);
+BOOL                InitInstance(HINSTANCE, int);
+LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
+                     _In_opt_ HINSTANCE hPrevInstance,
+                     _In_ LPWSTR    lpCmdLine,
+                     _In_ int       nCmdShow)
+&amp;#123;
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
+
+    // TODO: 在此处放置代码。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;python&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import torch.nn.functional as F
+import torch.optim as optim
+import matplotlib.pyplot as plt
+import numpy as np
+import sys
+#from pylab import *
+# --------------------准备数据集------------------
+# Dataset, DataLoader
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])
+
+trainset = torchvision.datasets.CIFAR10(root=&amp;#39;./data&amp;#39;, train=True,
+                                        download=True, transform=transform)
+
+testset = torchvision.datasets.CIFAR10(root=&amp;#39;./data&amp;#39;,train=False,
+                                       transform=transform, download=True)
+# 4张图为1份
+trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)
+testloader = DataLoader(dataset=testset, batch_size=4, shuffle=True, num_workers=0)
+classes = (&amp;#39;plane&amp;#39;, &amp;#39;car&amp;#39;, &amp;#39;bird&amp;#39;, &amp;#39;cat&amp;#39;, &amp;#39;deer&amp;#39;, &amp;#39;dog&amp;#39;, &amp;#39;frog&amp;#39;, &amp;#39;horse&amp;#39;, &amp;#39;ship&amp;#39;, &amp;#39;truck&amp;#39;)
+#
+dataiter = iter(trainloader)
+images, labels = dataiter.next()
+def imshow(img):
+   img = img /2+0.5     # 非标准的（unnormalized）
+   npimg = img.numpy()
+   plt.imshow(np.transpose(npimg, (1, 2, 0)))
+   plt.show()
+imshow(torchvision.utils.make_grid(images.detach().cpu().squeeze()))
+#plt.show()
+# print labels
+print(&amp;#39; &amp;#39;.join(&amp;#39;%5s&amp;#39;% classes[labels[j]] for j in range(4)))
+&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="博客" scheme="https://heimdall-nss.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="搭建测试" scheme="https://heimdall-nss.github.io/tags/%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暑期系列：计算机组成原理</title>
+    <link href="https://heimdall-nss.github.io/2021/08/11/computer%20consistency/"/>
+    <id>https://heimdall-nss.github.io/2021/08/11/computer%20consistency/</id>
+    <published>2021-08-11T12:08:16.000Z</published>
+    <updated>2021-08-23T03:47:09.060Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-计算机系统简介"><a href="#1-计算机系统简介" class="headerlink" title="1 计算机系统简介"></a>1 计算机系统简介</h2><ul><li><p>硬件：主机、外设等</p></li><li><p>软件：程序</p><img src="/2021/08/11/computer%20consistency/image-20210809162200577.png" alt="image-20210809162200577" style="zoom:50%;"></li></ul><h2 id="2-计算机基本组成"><a href="#2-计算机基本组成" class="headerlink" title="2 计算机基本组成"></a>2 计算机基本组成</h2><pre class="mermaid">graph LRA[运算器] -->B(CPU)C[控制器] -->BB -->ED[存储器] -->E(主机)F[输入设备] -->H(I/O设备)G[输出设备] -->Hstyle A fill:#ccfstyle C fill:#ccfstyle D fill:#ccfstyle F fill:#ccfstyle G fill:#ccf</pre><img src="/2021/08/11/computer%20consistency/image-20210809164028137.png" alt="image-20210809164028137" style="zoom:50%;"><p>一条指令[操作码|地址码]的完成过程：</p><ul><li><p>取指令：从MAR–&gt;IR (<font color="greee">PC</font> 指向下一条指令的地址)</p></li><li><p>指令译码：ID获取指令类别和操作数</p></li><li><p>指令执行：</p></li><li><p>访存取数：根据指令地址码访问主存取到对应操作数</p></li><li><p>结果写回：CPU内部寄存器 || 主存..</p></li></ul><h2 id="3-计算机硬件主要技术指标"><a href="#3-计算机硬件主要技术指标" class="headerlink" title="3 计算机硬件主要技术指标"></a>3 计算机硬件主要技术指标</h2><ul><li>机器字长：CPU一次能处理的数据位数(取决于CPU寄存器位数)</li><li>运算速度<blockquote><p>CPI 执行一条指令所需时钟周期数<br>MIPS 每秒执行百万条指令<br>FLOPS 每秒浮点运算次数</p></blockquote></li><li>主存容量(内存)<blockquote><p>64K × 32位 ：MAR 16个 存储字长32位<br>1KB = 2 <sup>13</sup> b</p></blockquote></li><li>辅存容量(外存) ：1GB = 2 <sup>30</sup> B 、1B = 8b（bit）</li></ul><h2 id="4-存储器"><a href="#4-存储器" class="headerlink" title="4 存储器"></a>4 存储器</h2><h4 id="层级"><a href="#层级" class="headerlink" title="层级"></a>层级</h4><img src="/2021/08/11/computer%20consistency/image-20210811163455754.png" alt="image-20210811163455754" style="zoom:80%;"><h4 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h4><ol><li><p>与CPU通过总线直接相连<img src="/2021/08/11/computer%20consistency/image-20210811163634876.png" alt="image-20210811163634876" style="zoom:30%;"></p></li><li><p>CPU与主存的读写过程</p><ol><li><p>读出：CPU将该字地址送至MAR经地址总线送至主存–&gt;发读命令–&gt;主存读出内容后送至数据总线上由MDR送至目的地</p></li><li><p>存入：CPU将该字地址送至MAR经地址总线，将字送入MDR—&gt;发写命令–&gt;主存将数据总线上信息写入对应地址</p></li></ol></li><li><p>技术指标</p><blockquote><p>存储容量：存在二进制代码的总位数</p><p>存取时间：访问时间(读出时间或写入时间)</p><p>存取周期：进行连续两次存储器操作所需最小间隔时间</p><p>带宽：每秒从存储器进出信息的最大数量 [b/s 字节/s]</p></blockquote></li></ol><blockquote><p>…</p></blockquote><h2 id="5-I-O系统"><a href="#5-I-O系统" class="headerlink" title="5 I/O系统"></a>5 I/O系统</h2><ul><li><p>发展过程</p><blockquote><p>CPU与I/O串行：程序查询方式</p><p>CPU…并行：中断 | DMA</p><p>通道结构</p><p>I/O处理机</p></blockquote></li><li><p>I/O接口</p><img src="/2021/08/11/computer%20consistency/image-20210810121018260.png" alt="image-20210810121018260" style="zoom:80%;"><ul><li><p>设置原因：</p><blockquote><p>选择设备</p><p>实现数据缓冲(匹配速度)</p><p>串并转换</p><p>电平转换</p><p>传输控制命令</p><p>反映设备状态(”忙“”就绪“”中断请求“)</p></blockquote></li></ul></li><li><p>程序查询方式<img src="/2021/08/11/computer%20consistency/image-20210810121310702.png" alt="image-20210810121310702" style="zoom:50%;"></p></li><li><p>中断方式</p><blockquote><p>保护现场[出栈]</p><p>中断服务</p><p>恢复现场[进栈]</p><p>中断返回</p></blockquote></li><li><p>DMA方式<img src="/2021/08/11/computer%20consistency/image-20210810121731326.png" alt="image-20210810121731326" style="zoom:80%;"></p></li></ul><h2 id="6-计算机的运算方法"><a href="#6-计算机的运算方法" class="headerlink" title="6 计算机的运算方法"></a>6 计算机的运算方法</h2><blockquote><p>原码</p><p>补码：正数与其原码相同 | 负数是原码除符号位外取反加一</p><p>反码：原码除符号位外取反</p><p><font color="red">移码</font>：与补码符号位相反<img src="/2021/08/11/computer%20consistency/image-20210810122335503.png" alt="image-20210810122335503" style="zoom:50%;"></p></blockquote><ul><li>定点表示：小数点位置不变</li></ul><blockquote><p>定点数x=xnxn-1…x2x1 [xn为符号位]</p><p>若X为纯小数：小数点位于xn与xn-1之间 </p><p>若X为纯整数：小数点位于x1的右边</p></blockquote><ul><li><p>浮点表示：任意二进制数N = 2^e.M<img src="/2021/08/11/computer%20consistency/image-20210810150919742.png" alt="image-20210810150919742" style="zoom:50%;"></p></li><li><p>相关运算</p><blockquote><p><font color="greee">乘法</font>：靠一些移位和加减🚬</p><p>[但是我感觉第二步就是一般整数乘法的算法就ok？]</p><img src="/2021/08/11/computer%20consistency/image-20210810151735175.png" alt="image-20210810151735175" style="zoom:50%;"></blockquote></li></ul><blockquote><p><font color="greee">除法</font>：加减交替法</p><img src="/2021/08/11/computer%20consistency/image-20210810160616306.png" alt="image-20210810160616306" style="zoom:30%;"><p>结果为负数[11 1110] –&gt; 商0、下一步 +Y、余数左移[11 1100]</p><p>结果为正数[00 1001] –&gt; 商1、下一步 -Y、余数左移[01 0010]</p><p>结果为正数[00 0101] –&gt; 商1、下一步 -Y、余数左移[00 1010]</p><p>结果为负数[11 1101] –&gt; 商0、下一步 +Y、余数左移[11 1010]</p><p>结果为正数[00 0111] –&gt; 商1 –&gt; 最终商：01101 余数：00 0111(0.0111)</p><p>结果：0.0111 * 2<sup>-4</sup> + 0.1101</p></blockquote><blockquote><p><font color="greee">浮点数加减</font>：🚬🚬🚬<img src="/2021/08/11/computer%20consistency/image-20210810162244763.png" alt="image-20210810162244763" style="zoom:80%;"></p><ol><li><p>对阶：小向大看齐<img src="/2021/08/11/computer%20consistency/image-20210810162550317.png" alt="image-20210810162550317" style="zoom:150%;"></p><img src="/2021/08/11/computer%20consistency/image-20210810162635081.png" alt="image-20210810162635081" style="zoom:150%;"></li><li><p>尾数相加<img src="/2021/08/11/computer%20consistency/image-20210810162729690.png" alt="image-20210810162729690" style="zoom:40%;"></p></li><li><p>结果规格化</p><blockquote><p>溢出[双符号位不相等]：右归-&gt;小数点左移 若没给出双符号位，则不会溢出</p><p>未溢出：左归直到是<img src="/2021/08/11/computer%20consistency/image-20210810163050894.png" alt="image-20210810163050894" style="zoom:40%;"></p><img src="/2021/08/11/computer%20consistency/image-20210810164422809.png" alt="image-20210810164422809" style="zoom:150%;"></blockquote></li><li><p>舍入处理：丢弃最高位0舍1入<img src="/2021/08/11/computer%20consistency/image-20210810164709244.png" alt="image-20210810164709244" style="zoom:43%;"></p></li><li><p>阶码溢出判断<img src="/2021/08/11/computer%20consistency/image-20210810164824784.png" alt="image-20210810164824784" style="zoom:80%;"></p> <img src="/2021/08/11/computer%20consistency/image-20210810165907725.png" alt="image-20210810165907725" style="zoom:80%;"></li></ol><p>  [补码–&gt;原码：除符号位减1再取反]</p></blockquote><h2 id="7-指令系统-详见"><a href="#7-指令系统-详见" class="headerlink" title="7 指令系统^ 详见"></a>7 指令系统<a href="OneNote%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E7%AB%A0%E8%8A%82%22%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%AF%BB%E5%9D%80%22">^ 详见</a></h2><ul><li><p>机器指令</p></li><li><p>操作类型|操作数</p></li><li><p>寻址方式</p></li></ul><h2 id="8-CPU"><a href="#8-CPU" class="headerlink" title="8 CPU"></a>8 CPU</h2><ul><li><p>CPU结构<img src="/2021/08/11/computer%20consistency/image-20210811154301863.png" alt="image-20210811154301863" style="zoom:80%;"></p><p>寄存器种类</p><blockquote><p>通用寄存器：存放操作数</p><p>数据寄存器：存放操作数</p><p>地址寄存器：存放地址</p><p>条件码寄存器：存在条件码</p></blockquote></li><li><p>指令周期：取出并执行一条指令所需的全部时间</p></li><li><p>指令流水<img src="/2021/08/11/computer%20consistency/image-20210811155328449.png" alt="image-20210811155328449" style="zoom:80%;"><br>![测试用](./computer consistency/image-20210811155339260.png)</p></li></ul><ul><li><p>中断系统</p><ol><li><p>引起中断的因素</p><blockquote><p>人为设置中断</p><p>程序性事故(溢出、除法非法、操作码无法识别)</p><p>硬件故障</p><p>I/O设备</p><p>外部事件(键盘 。。)</p></blockquote></li><li><p>中断过程<a href="OneNote%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E7%AB%A0%E8%8A%82%22%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%AF%BB%E5%9D%80%22">^ 详见</a><br>[^ ]：OneNote微机原理-中断</p><blockquote><p><font color="greee">中断请求</font>: 中断请求信号 –&gt;CPU INTR口</p><p><font color="greee">中断源识别</font>: 中断类型号 –&gt;高优先级先，同优先级按FCFS，低可被高打断</p><p><font color="greee">中断响应</font>：</p><ol><li>一条指令的最后一个时钟周期CPU检测INTR信号</li><li>向中断源发出INTA中断响应信号</li><li>断点保护（入栈）</li><li>获取中断服务程序首地址：【查询<strong>中断向量表：中断类型号|中断服务程序的入口地址</strong>】</li></ol><p><font color="greee">中断服务</font></p><ol><li>保护现场</li><li>中断服务</li><li>恢复现场</li><li>中断返回</li></ol><p><font color="greee">中断返回</font>：弹出堆栈中断点信息</p></blockquote></li></ol></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-计算机系统简介&quot;&gt;&lt;a href=&quot;#1-计算机系统简介&quot; class=&quot;headerlink&quot; title=&quot;1 计算机系统简介&quot;&gt;&lt;/a&gt;1 计算机系统简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;硬件：主机、外设等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;软件：程序&lt;/p&gt;
+&lt;img src=&quot;/2021/08/11/computer%20consistency/image-20210809162200577.png&quot; alt=&quot;image-20210809162200577&quot; style=&quot;zoom:50%;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;2-计算机基本组成&quot;&gt;&lt;a href=&quot;#2-计算机基本组成&quot; class=&quot;headerlink&quot; title=&quot;2 计算机基本组成&quot;&gt;&lt;/a&gt;2 计算机基本组成&lt;/h2&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
+A[运算器] --&gt;B(CPU)
+C[控制器] --&gt;B
+B --&gt;E
+D[存储器] --&gt;E(主机)
+F[输入设备] --&gt;H(I/O设备)
+G[输出设备] --&gt;H
+style A fill:#ccf
+style C fill:#ccf
+style D fill:#ccf
+style F fill:#ccf
+style G fill:#ccf&lt;/pre&gt;
+&lt;img src=&quot;/2021/08/11/computer%20consistency/image-20210809164028137.png&quot; alt=&quot;image-20210809164028137&quot; style=&quot;zoom:50%;&quot;&gt;
+
+&lt;p&gt;一条指令[操作码|地址码]的完成过程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;取指令：从MAR–&amp;gt;IR (&lt;font color=&quot;greee&quot;&gt;PC&lt;/font&gt; 指向下一条指令的地址)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;指令译码：ID获取指令类别和操作数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;指令执行：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;访存取数：根据指令地址码访问主存取到对应操作数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;结果写回：CPU内部寄存器 || 主存..&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;3-计算机硬件主要技术指标&quot;&gt;&lt;a href=&quot;#3-计算机硬件主要技术指标&quot; class=&quot;headerlink&quot; title=&quot;3 计算机硬件主要技术指标&quot;&gt;&lt;/a&gt;3 计算机硬件主要技术指标&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;机器字长：CPU一次能处理的数据位数(取决于CPU寄存器位数)&lt;/li&gt;
+&lt;li&gt;运算速度&lt;blockquote&gt;
+&lt;p&gt;CPI 执行一条指令所需时钟周期数&lt;br&gt;MIPS 每秒执行百万条指令&lt;br&gt;FLOPS 每秒浮点运算次数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;主存容量(内存)&lt;blockquote&gt;
+&lt;p&gt;64K × 32位 ：MAR 16个 存储字长32位&lt;br&gt;1KB = 2 &lt;sup&gt;13&lt;/sup&gt; b&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;辅存容量(外存) ：1GB = 2 &lt;sup&gt;30&lt;/sup&gt; B 、1B = 8b（bit）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;4-存储器&quot;&gt;&lt;a href=&quot;#4-存储器&quot; class=&quot;headerlink&quot; title=&quot;4 存储器&quot;&gt;&lt;/a&gt;4 存储器&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="计算机专业课" scheme="https://heimdall-nss.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+    
+    <category term="计组" scheme="https://heimdall-nss.github.io/tags/%E8%AE%A1%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://heimdall-nss.github.io/2021/07/18/hello-world/"/>
+    <id>https://heimdall-nss.github.io/2021/07/18/hello-world/</id>
+    <published>2021-07-18T09:23:14.511Z</published>
+    <updated>2021-08-22T02:09:31.648Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ hexo new &amp;quot;My New Post&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ hexo server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ hexo generate
+&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>

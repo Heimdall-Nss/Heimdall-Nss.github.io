@@ -48,7 +48,7 @@
     
     <title>
         
-            Archives: 2021/7 | 
+            Categories: 博客 | 
         
         COOLGuysneverSleep
     </title>
@@ -222,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="COOLGuysneverSleep">
-    <meta name="msapplication-starturl" content="https://heimdall-nss.github.io/archives/2021/07/">
+    <meta name="msapplication-starturl" content="https://heimdall-nss.github.io/categories/%E5%8D%9A%E5%AE%A2/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="COOLGuysneverSleep">
@@ -237,9 +237,9 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://heimdall-nss.github.io/archives/2021/07/">
+    <meta property="og:url" content="https://heimdall-nss.github.io/categories/%E5%8D%9A%E5%AE%A2/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Archives: 2021/7 | COOLGuysneverSleep">
+    <meta property="og:title" content="Categories: 博客 | COOLGuysneverSleep">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="欢迎光临">
     
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://heimdall-nss.github.io/archives/2021/07/index.html">
+        <link rel="canonical" href="https://heimdall-nss.github.io/categories/%E5%8D%9A%E5%AE%A2/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -315,25 +315,96 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/07/18/hello-world/">Hello World</a></p>
+        <p class="article-headline-p"><a href="/2021/08/23/test/">test</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new "My New Post"
+            giao我就不信了，明明按照步骤做的为筛子就不对
 
-More info: Writing
-Run server$ hexo server
+捏吗的，这不是可以的吗，为什么隔壁的文章就显示不来？？
+highlight测试
+java
+function Bing_show_category() {
+    global $wpdb;
+    $request = "SELECT $wpdb-&gt;terms.term_id, name FROM $wpdb-&gt;terms ";
+    $request .= " LEFT JOIN $wpdb-&gt;term_taxonomy ON $wpdb-&gt;term_taxonomy.term_id = $wpdb-&gt;terms.term_id ";
+    $request .= " WHERE $wpdb-&gt;term_taxonomy.taxonomy = 'category' ";
+    $request .= " ORDER BY term_id asc";
+    $categorys = $wpdb-&gt;get_results($request);
+    foreach ($categorys as $category) { //调用菜单
+        $output = '&lt;span&gt;'.$category-&gt;name."(&lt;em&gt;".$category-&gt;term_id.'&lt;/em&gt;)&lt;/span&gt;';
+        echo $output;
+    }
+}
 
-More info: Server
-Generate static files$ hexo generate
+C++
+#include "stdafx.h"
+#include "myCalculator.h"
+
+#define MAX_LOADSTRING 100
+
+// 全局变量:
+HINSTANCE hInst;                                // 当前实例
+WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本
+WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
+
+// 此代码模块中包含的函数的前向声明:
+ATOM                MyRegisterClass(HINSTANCE hInstance);
+BOOL                InitInstance(HINSTANCE, int);
+LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
+                     _In_opt_ HINSTANCE hPrevInstance,
+                     _In_ LPWSTR    lpCmdLine,
+                     _In_ int       nCmdShow)
+{
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
+
+    // TODO: 在此处放置代码。
+
+python
+import torch.nn.functional as F
+import torch.optim as optim
+import matplotlib.pyplot as plt
+import numpy as np
+import sys
+#from pylab import *
+# --------------------准备数据集------------------
+# Dataset, DataLoader
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])
+
+trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
+                                        download=True, transform=transform)
+
+testset = torchvision.datasets.CIFAR10(root='./data',train=False,
+                                       transform=transform, download=True)
+# 4张图为1份
+trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)
+testloader = DataLoader(dataset=testset, batch_size=4, shuffle=True, num_workers=0)
+classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+#
+dataiter = iter(trainloader)
+images, labels = dataiter.next()
+def imshow(img):
+   img = img /2+0.5     # 非标准的（unnormalized）
+   npimg = img.numpy()
+   plt.imshow(np.transpose(npimg, (1, 2, 0)))
+   plt.show()
+imshow(torchvision.utils.make_grid(images.detach().cpu().squeeze()))
+#plt.show()
+# print labels
+print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
 
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2021/07/18/hello-world/" target="_self">Read more</a>
+            <a href="/2021/08/23/test/" target="_self">Read more</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -345,11 +416,16 @@ Generate static files$ hexo generate
             </div>
             <div>
                 <strong>NENEIIII</strong>
-                <span>Jul 18, 2021</span>
+                <span>Aug 23, 2021</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
+              </span>
+            
 
             
 
