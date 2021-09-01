@@ -20,23 +20,56 @@
 
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></noscript></head><body id="scheme-Paradox" class="lazy">&lt;% if(theme.vendors.materialcdn) { %&gt;
+    <link rel="dns-prefetch" href="<%= theme.vendors.materialcdn %>">
+&lt;% } %&gt;
+&lt;% if( (theme.leancloud.enable === true) || (theme.comment.use == "valine") ) { %&gt;
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+&lt;% } %&gt;
+&lt;% if(theme.busuanzi.enable === true) { %&gt;
     <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+&lt;% } %&gt;
 
-
-
+&lt;% if(theme.comment.use === "changyan") { %&gt;
+    <link rel="dns-prefetch" href="https://changyan.sohu.com">
+&lt;% } else if(theme.comment.use === "livere") { %&gt;
     <link rel="dns-prefetch" href="https://cdn-city.livere.com">
+&lt;% } else if(theme.comment.use === "gitment") { %&gt;
+    <link rel="dns-prefetch" href="https://imsun.github.io">
+&lt;% } else if(theme.comment.use === "valine") { %&gt;
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+&lt;% } else if(theme.comment.use.startsWith("disqus")) { %&gt;
+    <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com">
+&lt;% } %&gt;
 
+&lt;% if(theme.analytics.baidu_site_id) { %&gt;
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+&lt;% } if(theme.analytics.google_site_id) { %&gt;
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+&lt;% } if(theme.analytics.cnzz_site_id) { %&gt;
+    <link rel="dns-prefetch" href="https://s95.cnzz.com">
+&lt;% } %&gt;
 
-
-
-
+&lt;% if(theme.fonts.use === "google") { %&gt;
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+&lt;% } else if(theme.fonts.use === "ustc") { %&gt;
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+&lt;% } else if(theme.fonts.use === "baomitu") { %&gt;
+    <link rel="dns-prefetch" href="https://lib.baomitu.com">
+&lt;% } else if(theme.fonts.use === "custom") { %&gt;
+    <link rel="dns-prefetch" href="<%= theme.fonts.custom_font_host %>">
+&lt;% } else if(theme.fonts.use === "catnet") { %&gt;
+    <link rel="dns-prefetch" href="https://cdnjs.loli.net">
+&lt;% } %&gt;
 
-
-
+&lt;% if(theme.qrcode.use === "online" &amp;&amp; theme.qrcode.enable === "true") { %&gt;
+    &lt;% if(config.language === "zh-CN") { %&gt;
+        <link rel="dns-prefetch" href="https://pan.baidu.com">
+    &lt;% } else { %&gt;
+        <link rel="dns-prefetch" href="https://chart.googleapis.com">
+    &lt;% } %&gt;
+&lt;% } %&gt;
 
 
     <!-- Meta & Info -->
@@ -437,11 +470,11 @@ CPI 执行一条指令所需时钟周期数MIPS 每秒执行百万条指令FLOPS
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="COOLGuysneverSleep" type="application/atom+xml">
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></noscript></head>
+
 
 
     
-        <body id="scheme-Paradox" class="lazy">
+        
             <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
 
@@ -979,6 +1012,15 @@ style G fill:#ccf</pre>
     <!-- User dropdown  -->
     <li class="dropdown">
         <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
             
         </ul>
     </li>
