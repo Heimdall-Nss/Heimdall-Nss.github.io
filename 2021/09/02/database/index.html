@@ -22,56 +22,23 @@
 
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-<% if(theme.vendors.materialcdn) { %>
-    <link rel="dns-prefetch" href="<%= theme.vendors.materialcdn %>"/>
-<% } %>
-<% if( (theme.leancloud.enable === true) || (theme.comment.use == "valine") ) { %>
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-<% } %>
-<% if(theme.busuanzi.enable === true) { %>
+
+
+
     <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-<% } %>
 
-<% if(theme.comment.use === "changyan") { %>
-    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
-<% } else if(theme.comment.use === "livere") { %>
+
+
     <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
-<% } else if(theme.comment.use === "gitment") { %>
-    <link rel="dns-prefetch" href="https://imsun.github.io"/>
-<% } else if(theme.comment.use === "valine") { %>
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
-<% } else if(theme.comment.use.startsWith("disqus")) { %>
-    <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com"/>
-<% } %>
 
-<% if(theme.analytics.baidu_site_id) { %>
-    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
-<% } if(theme.analytics.google_site_id) { %>
-    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-<% } if(theme.analytics.cnzz_site_id) { %>
-    <link rel="dns-prefetch" href="https://s95.cnzz.com"/>
-<% } %>
 
-<% if(theme.fonts.use === "google") { %>
+
+
+
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
-<% } else if(theme.fonts.use === "ustc") { %>
-    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org"/>
-<% } else if(theme.fonts.use === "baomitu") { %>
-    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
-<% } else if(theme.fonts.use === "custom") { %>
-    <link rel="dns-prefetch" href="<%= theme.fonts.custom_font_host %>"/>
-<% } else if(theme.fonts.use === "catnet") { %>
-    <link rel="dns-prefetch" href="https://cdnjs.loli.net"/>
-<% } %>
 
-<% if(theme.qrcode.use === "online" && theme.qrcode.enable === "true") { %>
-    <% if(config.language === "zh-CN") { %>
-        <link rel="dns-prefetch" href="https://pan.baidu.com"/>
-    <% } else { %>
-        <link rel="dns-prefetch" href="https://chart.googleapis.com"/>
-    <% } %>
-<% } %>
+
+
 
 
     <!-- Meta & Info -->
@@ -147,7 +114,7 @@
 冲突可串行化[前趋图画法]((13 封私信 / 19 条消息) 事务操作调度冲突可串行化的判断（通过前驱图） - 知乎 (zhihu.com))
 
 ">
-    <meta name="keywords" content=",暑期系列,专业课,数据库">
+    <meta name="keywords" content=",数据库,暑期系列,专业课">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -381,7 +348,7 @@
 冲突可串行化[前趋图画法]((13 封私信 / 19 条消息) 事务操作调度冲突可串行化的判断（通过前驱图） - 知乎 (zhihu.com))
 
 ">
-    <meta property="og:article:tag" content="暑期系列"> <meta property="og:article:tag" content="专业课"> <meta property="og:article:tag" content="数据库"> 
+    <meta property="og:article:tag" content="数据库"> <meta property="og:article:tag" content="暑期系列"> <meta property="og:article:tag" content="专业课"> 
 
     
         <meta property="article:published_time" content="Thu Sep 02 2021 17:33:22 GMT+0800">
@@ -426,7 +393,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",暑期系列,专业课,数据库",
+    "keywords": ",数据库,暑期系列,专业课",
     "description": "写在^ 前面
 并发控制并发可能导致的三种不一致状态
 丢失修改
@@ -1181,12 +1148,6 @@ It will not impact the appearance and can give developers a lot of support :)
     <span id="footer-image">
         <a href="https://account.aliyun.com/" target="_blank" title="aliyun">
             <img src="/img/aliyun.svg" alt="aliyun"><!--
-     --></a>
-    </span>
-
-    <span id="footer-image">
-        <a href="https://www.nowcoder.com/" target="_blank" title="newcoder">
-            <img src="/img/newcoder.png" alt="newcoder"><!--
      --></a>
     </span>
 

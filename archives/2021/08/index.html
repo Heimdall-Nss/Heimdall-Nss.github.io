@@ -22,56 +22,23 @@
 
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-<% if(theme.vendors.materialcdn) { %>
-    <link rel="dns-prefetch" href="<%= theme.vendors.materialcdn %>"/>
-<% } %>
-<% if( (theme.leancloud.enable === true) || (theme.comment.use == "valine") ) { %>
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-<% } %>
-<% if(theme.busuanzi.enable === true) { %>
+
+
+
     <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-<% } %>
 
-<% if(theme.comment.use === "changyan") { %>
-    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
-<% } else if(theme.comment.use === "livere") { %>
+
+
     <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
-<% } else if(theme.comment.use === "gitment") { %>
-    <link rel="dns-prefetch" href="https://imsun.github.io"/>
-<% } else if(theme.comment.use === "valine") { %>
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
-<% } else if(theme.comment.use.startsWith("disqus")) { %>
-    <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com"/>
-<% } %>
 
-<% if(theme.analytics.baidu_site_id) { %>
-    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
-<% } if(theme.analytics.google_site_id) { %>
-    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-<% } if(theme.analytics.cnzz_site_id) { %>
-    <link rel="dns-prefetch" href="https://s95.cnzz.com"/>
-<% } %>
 
-<% if(theme.fonts.use === "google") { %>
+
+
+
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
-<% } else if(theme.fonts.use === "ustc") { %>
-    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org"/>
-<% } else if(theme.fonts.use === "baomitu") { %>
-    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
-<% } else if(theme.fonts.use === "custom") { %>
-    <link rel="dns-prefetch" href="<%= theme.fonts.custom_font_host %>"/>
-<% } else if(theme.fonts.use === "catnet") { %>
-    <link rel="dns-prefetch" href="https://cdnjs.loli.net"/>
-<% } %>
 
-<% if(theme.qrcode.use === "online" && theme.qrcode.enable === "true") { %>
-    <% if(config.language === "zh-CN") { %>
-        <link rel="dns-prefetch" href="https://pan.baidu.com"/>
-    <% } else { %>
-        <link rel="dns-prefetch" href="https://chart.googleapis.com"/>
-    <% } %>
-<% } %>
+
+
 
 
     <!-- Meta & Info -->
@@ -351,26 +318,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            用hexo n xx新建的post可以正常显示图片，但如果是自己直接拖拽过去一篇md，同样建立同名文件夹放图片就不行，目前只能采用第一种方式，然后把之前的md复制进去
-
-
-关于首页预览的字数显示：
-渲染的部分不算吗？？
-以下是20个字符：一二三四五六七八九十九八七六五四三二一零
-mathjax测试highlight测试
-C++
-#include "stdafx.h"
-#include "myCalculator.h"
-
-#define MAX_LOADSTRING 100
-
-// 全局变量:
-HINSTANCE hInst;                                // 当前实例
-WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本
-WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
-
-
-python
+            写在front-matter的`excerpt`后的文字是预览的内容
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -755,12 +703,6 @@ It will not impact the appearance and can give developers a lot of support :)
     <span id="footer-image">
         <a href="https://account.aliyun.com/" target="_blank" title="aliyun">
             <img src="/img/aliyun.svg" alt="aliyun"><!--
-     --></a>
-    </span>
-
-    <span id="footer-image">
-        <a href="https://www.nowcoder.com/" target="_blank" title="newcoder">
-            <img src="/img/newcoder.png" alt="newcoder"><!--
      --></a>
     </span>
 
