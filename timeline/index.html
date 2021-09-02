@@ -729,6 +729,83 @@
                 		</div>
 
                 		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2021/09/02/database/">database</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-none-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>, <a class="tag-none-link" href="/tags/%E6%9A%91%E6%9C%9F%E7%B3%BB%E5%88%97/" rel="tag">暑期系列</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							写在^ 前面
+并发控制并发可能导致的三种不一致状态
+丢失修改
+
+写-写
+
+
+两个事务T2和T2读入同一数据并修改，T2的提交结果破坏了T1提交的结果，导致T1的修改被丢失
+
+
+不可重复读
+
+读-修改
+
+
+读-删除
+
+
+读-插入
+
+
+读脏数据
+
+修改-读
+
+
+
+
+
+并发控制：正确调度并发操作，避免造成不一致性
+封锁技术
+
+
+写锁：其他事务不能读和写，也不能申请任何锁
+读锁：其它事务可以读，可以再申请读锁
+
+
+封锁协议：规定申请时间，持锁时长，释放时间
+
+一级协议：修改前必须加写锁，事务[^ 结束]后释放
+[^ 结束]: commit OR rollback
+
+
+
+
+
+
+冲突操作：读-写，写-写
+
+
+
+冲突可串行化[前趋图画法]((13 封私信 / 19 条消息) 事务操作调度冲突可串行化的判断（通过前驱图） - 知乎 (zhihu.com))
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">Sep 02 2021</div>
+                		</div>
+
+                		<div class="md-timeline-content">
                     			<div class="md-timeline-title"><a href="/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/">hexo主题Next-&gt;material切换踩坑</a></div>
 					<div class="md-timeline-info">
 						<span class="md-timeline-info-span">Categories:
@@ -763,7 +840,7 @@ livere_uid: "你的代码"
                 		</div>
 
                 		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2021/08/23/test/">test</a></div>
+                    			<div class="md-timeline-title"><a href="/2021/08/23/test/">测试用内容不重要</a></div>
 					<div class="md-timeline-info">
 						<span class="md-timeline-info-span">Categories:
 							<a class="category-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
@@ -775,9 +852,12 @@ livere_uid: "你的代码"
 					</div>
 					<p class="md-timeline-excerpt">
 						
-							giao我就不信了，明明按照步骤做的为筛子就不对
+							用hexo n xx新建的post可以正常显示图片，但如果是自己直接拖拽过去一篇md，同样建立同名文件夹放图片就不行，目前只能采用第一种方式，然后把之前的md复制进去
 
-捏吗的，这不是可以的吗，为什么隔壁的文章就显示不来？？
+
+关于首页预览的字数显示：
+渲染的部分不算吗？？
+以下是20个字符：一二三四五六七八九十九八七六五四三二一零
 mathjax测试highlight测试
 C++
 #include "stdafx.h"
@@ -792,41 +872,6 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
 
 
 python
-import torch.nn.functional as F
-import torch.optim as optim
-import matplotlib.pyplot as plt
-import numpy as np
-import sys
-#from pylab import *
-# --------------------准备数据集------------------
-# Dataset, DataLoader
-transform = transforms.Compose(
-    [transforms.ToTensor(),
-     transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])
-
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
-                                        download=True, transform=transform)
-
-testset = torchvision.datasets.CIFAR10(root='./data',train=False,
-                                       transform=transform, download=True)
-# 4张图为1份
-trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)
-testloader = DataLoader(dataset=testset, batch_size=4, shuffle=True, num_workers=0)
-classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-#
-dataiter = iter(trainloader)
-images, labels = dataiter.next()
-def imshow(img):
-   img = img /2+0.5     # 非标准的（unnormalized）
-   npimg = img.numpy()
-   plt.imshow(np.transpose(npimg, (1, 2, 0)))
-   plt.show()
-imshow(torchvision.utils.make_grid(images.detach().cpu().squeeze()))
-#plt.show()
-# print labels
-print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
-
-
 						...
 					</p>
                     		</div>
@@ -1030,7 +1075,7 @@ Generate static files$ hexo generate
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1048,7 +1093,7 @@ Generate static files$ hexo generate
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1094,7 +1139,7 @@ Generate static files$ hexo generate
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">4</span>
+                <span class="sidebar-badge">5</span>
             </a>
         </li>
         

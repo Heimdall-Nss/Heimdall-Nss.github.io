@@ -345,6 +345,120 @@
     
 
         <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2021/09/02/database/">database</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            写在^ 前面
+并发控制并发可能导致的三种不一致状态
+丢失修改
+
+写-写
+
+
+两个事务T2和T2读入同一数据并修改，T2的提交结果破坏了T1提交的结果，导致T1的修改被丢失
+
+
+不可重复读
+
+读-修改
+
+
+读-删除
+
+
+读-插入
+
+
+读脏数据
+
+修改-读
+
+
+
+
+
+并发控制：正确调度并发操作，避免造成不一致性
+封锁技术
+
+
+写锁：其他事务不能读和写，也不能申请任何锁
+读锁：其它事务可以读，可以再申请读锁
+
+
+封锁协议：规定申请时间，持锁时长，释放时间
+
+一级协议：修改前必须加写锁，事务[^ 结束]后释放
+[^ 结束]: commit OR rollback
+
+
+
+
+
+
+冲突操作：读-写，写-写
+
+
+
+冲突可串行化[前趋图画法]((13 封私信 / 19 条消息) 事务操作调度冲突可串行化的判断（通过前驱图） - 知乎 (zhihu.com))
+
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2021/09/02/database/" target="_self">Read more</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
+            </div>
+            <div>
+                <strong>NENEIIII</strong>
+                <span>Sep 02, 2021</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+              </span>
+            
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
         <p class="article-headline-p"><a href="/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/">hexo主题Next-&gt;material切换踩坑</a></p>
     </div>
 
@@ -505,7 +619,7 @@ livere_uid: "你的代码"
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -523,7 +637,7 @@ livere_uid: "你的代码"
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -569,7 +683,7 @@ livere_uid: "你的代码"
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">4</span>
+                <span class="sidebar-badge">5</span>
             </a>
         </li>
         
