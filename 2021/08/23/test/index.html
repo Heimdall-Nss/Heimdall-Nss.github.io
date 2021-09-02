@@ -456,8 +456,7 @@ print(&#39; &#39;.join(&#39;%5s&#39;% classes[labels[j]] for j in range(4)))
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="COOLGuysneverSleep" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -569,7 +568,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="COOLGuysneverSleep" type="application/atom+xml">
+</head>
 
 
     
@@ -633,9 +633,9 @@ mjx-container[display="true"] + br {
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
             <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * <%= theme.thumbnail.random_amount %> + 1);
+    var randomNum = Math.floor(Math.random() * 67 + 1);
 
-    $('.post_thumbnail-random').attr('data-original', '<%= url_for(theme.img.random_thumbnail) %>' + randomNum + '.jpg');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material%20(' + randomNum + ').jpg');
     $('.post_thumbnail-random').addClass('lazy');
 </script>
 
