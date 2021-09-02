@@ -22,23 +22,56 @@
 
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
+<% if(theme.vendors.materialcdn) { %>
+    <link rel="dns-prefetch" href="<%= theme.vendors.materialcdn %>"/>
+<% } %>
+<% if( (theme.leancloud.enable === true) || (theme.comment.use == "valine") ) { %>
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+<% } %>
+<% if(theme.busuanzi.enable === true) { %>
     <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+<% } %>
 
-
-
+<% if(theme.comment.use === "changyan") { %>
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+<% } else if(theme.comment.use === "livere") { %>
     <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
+<% } else if(theme.comment.use === "gitment") { %>
+    <link rel="dns-prefetch" href="https://imsun.github.io"/>
+<% } else if(theme.comment.use === "valine") { %>
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+<% } else if(theme.comment.use.startsWith("disqus")) { %>
+    <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com"/>
+<% } %>
 
+<% if(theme.analytics.baidu_site_id) { %>
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+<% } if(theme.analytics.google_site_id) { %>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+<% } if(theme.analytics.cnzz_site_id) { %>
+    <link rel="dns-prefetch" href="https://s95.cnzz.com"/>
+<% } %>
 
-
-
-
+<% if(theme.fonts.use === "google") { %>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<% } else if(theme.fonts.use === "ustc") { %>
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org"/>
+<% } else if(theme.fonts.use === "baomitu") { %>
+    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+<% } else if(theme.fonts.use === "custom") { %>
+    <link rel="dns-prefetch" href="<%= theme.fonts.custom_font_host %>"/>
+<% } else if(theme.fonts.use === "catnet") { %>
+    <link rel="dns-prefetch" href="https://cdnjs.loli.net"/>
+<% } %>
 
-
-
+<% if(theme.qrcode.use === "online" && theme.qrcode.enable === "true") { %>
+    <% if(config.language === "zh-CN") { %>
+        <link rel="dns-prefetch" href="https://pan.baidu.com"/>
+    <% } else { %>
+        <link rel="dns-prefetch" href="https://chart.googleapis.com"/>
+    <% } %>
+<% } %>
 
 
     <!-- Meta & Info -->
@@ -864,6 +897,14 @@ print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -964,7 +1005,7 @@ print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -982,7 +1023,7 @@ print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1028,7 +1069,7 @@ print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">3</span>
+                <span class="sidebar-badge">4</span>
             </a>
         </li>
         
