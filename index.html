@@ -1,4 +1,6 @@
-<!DOCTYPE html><html style="display: none;" lang="en"><head>
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -20,56 +22,23 @@
 
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></noscript></head><body id="scheme-Paradox" class="lazy">&lt;% if(theme.vendors.materialcdn) { %&gt;
-    <link rel="dns-prefetch" href="<%= theme.vendors.materialcdn %>">
-&lt;% } %&gt;
-&lt;% if( (theme.leancloud.enable === true) || (theme.comment.use == "valine") ) { %&gt;
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-&lt;% } %&gt;
-&lt;% if(theme.busuanzi.enable === true) { %&gt;
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-&lt;% } %&gt;
 
-&lt;% if(theme.comment.use === "changyan") { %&gt;
-    <link rel="dns-prefetch" href="https://changyan.sohu.com">
-&lt;% } else if(theme.comment.use === "livere") { %&gt;
-    <link rel="dns-prefetch" href="https://cdn-city.livere.com">
-&lt;% } else if(theme.comment.use === "gitment") { %&gt;
-    <link rel="dns-prefetch" href="https://imsun.github.io">
-&lt;% } else if(theme.comment.use === "valine") { %&gt;
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-&lt;% } else if(theme.comment.use.startsWith("disqus")) { %&gt;
-    <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com">
-&lt;% } %&gt;
 
-&lt;% if(theme.analytics.baidu_site_id) { %&gt;
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-&lt;% } if(theme.analytics.google_site_id) { %&gt;
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-&lt;% } if(theme.analytics.cnzz_site_id) { %&gt;
-    <link rel="dns-prefetch" href="https://s95.cnzz.com">
-&lt;% } %&gt;
 
-&lt;% if(theme.fonts.use === "google") { %&gt;
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-&lt;% } else if(theme.fonts.use === "ustc") { %&gt;
-    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
-&lt;% } else if(theme.fonts.use === "baomitu") { %&gt;
-    <link rel="dns-prefetch" href="https://lib.baomitu.com">
-&lt;% } else if(theme.fonts.use === "custom") { %&gt;
-    <link rel="dns-prefetch" href="<%= theme.fonts.custom_font_host %>">
-&lt;% } else if(theme.fonts.use === "catnet") { %&gt;
-    <link rel="dns-prefetch" href="https://cdnjs.loli.net">
-&lt;% } %&gt;
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
-&lt;% if(theme.qrcode.use === "online" &amp;&amp; theme.qrcode.enable === "true") { %&gt;
-    &lt;% if(config.language === "zh-CN") { %&gt;
-        <link rel="dns-prefetch" href="https://pan.baidu.com">
-    &lt;% } else { %&gt;
-        <link rel="dns-prefetch" href="https://chart.googleapis.com">
-    &lt;% } %&gt;
-&lt;% } %&gt;
+
+
+    <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
 
 
     <!-- Meta & Info -->
@@ -88,14 +57,14 @@
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
     <link rel="icon" href="/img/favicon.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="欢迎光临">
     <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -229,7 +198,7 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 <!-- Import Material Icons -->
@@ -277,7 +246,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://heimdall-nss.github.io">
+        <link rel="canonical" href="https://heimdall-nss.github.io" />
     
 
     <!-- Structured-data for SEO -->
@@ -319,11 +288,123 @@
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="COOLGuysneverSleep" type="application/atom+xml">
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
 
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     
-        
+        <body id="scheme-Paradox" class="lazy">
             <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
 
@@ -386,7 +467,7 @@
         </label>
 
         <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
-            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder="">
+            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder=""/>
             <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
         </form>
     </div>
@@ -397,7 +478,7 @@
     <!-- LOGO -->
     <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
         <a href="https://github.com/Heimdall-Nss" target="_blank">
-            <img src="/img/logo.png" alt="logo">
+            <img src="/img/logo.png" alt="logo" />
         </a>
     </div>
 
@@ -416,9 +497,9 @@
         </button>
         <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
             
-                <a class="index_share-link" href="/about" title="About">
+                <a class="index_share-link" href="/about" title="About me">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
-                        About
+                        About me
                     </li>
                 </a>
             
@@ -456,7 +537,7 @@
             
 
             
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=COOLGuysneverSleep&amp;url=https://heimdall-nss.github.io&amp;pic=https://heimdall-nss.github.io/img/favicon.png&amp;searchPic=false&amp;style=simple" target="_blank">
+                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=COOLGuysneverSleep&url=https://heimdall-nss.github.io&pic=https://heimdall-nss.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         Share to Weibo
                     </li>
@@ -464,7 +545,7 @@
             
 
             
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=COOLGuysneverSleep&amp;url=https://heimdall-nss.github.io&amp;via=NENEIIII" target="_blank">
+                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=COOLGuysneverSleep&url=https://heimdall-nss.github.io&via=NENEIIII" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         Share to Twitter
                     </li>
@@ -482,7 +563,7 @@
             
 
             
-                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://heimdall-nss.github.io&amp;title=COOLGuysneverSleep" target="_blank">
+                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://heimdall-nss.github.io&title=COOLGuysneverSleep" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         Share to LinkedIn
                     </li>
@@ -490,7 +571,7 @@
             
 
             
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=COOLGuysneverSleep&amp;title=COOLGuysneverSleep&amp;summary=欢迎光临&amp;pics=https://heimdall-nss.github.io/img/favicon.png&amp;url=https://heimdall-nss.github.io" target="_blank">
+                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=COOLGuysneverSleep&title=COOLGuysneverSleep&summary=欢迎光临&pics=https://heimdall-nss.github.io/img/favicon.png&url=https://heimdall-nss.github.io" target="_blank">
                     <li class="mdl-menu__item">
                         Share to QQ
                     </li>
@@ -532,9 +613,7 @@
             giao我就不信了，明明按照步骤做的为筛子就不对
 
 捏吗的，这不是可以的吗，为什么隔壁的文章就显示不来？？
-highlight测试
- &lt;!-- more --&gt;
-
+mathjax测试highlight测试
 C++
 #include "stdafx.h"
 #include "myCalculator.h"
@@ -650,12 +729,12 @@ print(' '.join('%5s'% classes[labels[j]] for j in range(4)))
 
 
 2 计算机基本组成graph LR
-A[运算器] --&gt;B(CPU)
-C[控制器] --&gt;B
-B --&gt;E
-D[存储器] --&gt;E(主机)
-F[输入设备] --&gt;H(I/O设备)
-G[输出设备] --&gt;H
+A[运算器] -->B(CPU)
+C[控制器] -->B
+B -->E
+D[存储器] -->E(主机)
+F[输入设备] -->H(I/O设备)
+G[输出设备] -->H
 style A fill:#ccf
 style C fill:#ccf
 style D fill:#ccf
@@ -750,7 +829,7 @@ CPI 执行一条指令所需时钟周期数MIPS 每秒执行百万条指令FLOPS
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new "My New Post"
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
 
 More info: Writing
 Run server$ hexo server
@@ -897,7 +976,7 @@ Generate static files$ hexo generate
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -915,7 +994,7 @@ Generate static files$ hexo generate
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/">计算机专业课<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -923,11 +1002,11 @@ Generate static files$ hexo generate
     <!-- Pages  -->
     
         <li>
-            <a href="/about" title="About">
+            <a href="/about" title="About me">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
-                About
+                About me
             </a>
         </li>
         
@@ -1121,7 +1200,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;COOLGuysneverSleep
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;COOLGuysneverSleep
             
         </div>
 
@@ -1302,33 +1381,6 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        <div class="moon-menu">
-  <div class="moon-menu-items">
+        </body>
     
-    <div class="moon-menu-item" onclick="back2bottom()">
-      <svg aria-hidden="true" focusable="false" data-prefix="fa" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>    </div>
-    
-    <div class="moon-menu-item" onclick="back2top()">
-      <svg aria-hidden="true" focusable="false" data-prefix="fa" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg>    </div>
-    
-  </div>
-  <div class="moon-menu-button" onclick="moonMenuClick()">
-    <svg class="moon-menu-svg">
-      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
-      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
-      <g class="moon-menu-points">
-        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
-        <circle class="moon-menu-point" r=".2rem"></circle>
-        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
-      </g>
-    </svg>
-    <div class="moon-menu-icon">
-    </div>
-    <div class="moon-menu-text">
-    </div>
-  </div>
-</div>
-
-    
-
-<script src="/bundle.js"></script></body></html>
+</html>
