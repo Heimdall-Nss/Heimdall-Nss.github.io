@@ -22,23 +22,56 @@
 
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
+<% if(theme.vendors.materialcdn) { %>
+    <link rel="dns-prefetch" href="<%= theme.vendors.materialcdn %>"/>
+<% } %>
+<% if( (theme.leancloud.enable === true) || (theme.comment.use == "valine") ) { %>
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+<% } %>
+<% if(theme.busuanzi.enable === true) { %>
     <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+<% } %>
 
-
-
+<% if(theme.comment.use === "changyan") { %>
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+<% } else if(theme.comment.use === "livere") { %>
     <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
+<% } else if(theme.comment.use === "gitment") { %>
+    <link rel="dns-prefetch" href="https://imsun.github.io"/>
+<% } else if(theme.comment.use === "valine") { %>
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+<% } else if(theme.comment.use.startsWith("disqus")) { %>
+    <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com"/>
+<% } %>
 
+<% if(theme.analytics.baidu_site_id) { %>
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+<% } if(theme.analytics.google_site_id) { %>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+<% } if(theme.analytics.cnzz_site_id) { %>
+    <link rel="dns-prefetch" href="https://s95.cnzz.com"/>
+<% } %>
 
-
-
-
+<% if(theme.fonts.use === "google") { %>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<% } else if(theme.fonts.use === "ustc") { %>
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org"/>
+<% } else if(theme.fonts.use === "baomitu") { %>
+    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+<% } else if(theme.fonts.use === "custom") { %>
+    <link rel="dns-prefetch" href="<%= theme.fonts.custom_font_host %>"/>
+<% } else if(theme.fonts.use === "catnet") { %>
+    <link rel="dns-prefetch" href="https://cdnjs.loli.net"/>
+<% } %>
 
-
-
+<% if(theme.qrcode.use === "online" && theme.qrcode.enable === "true") { %>
+    <% if(config.language === "zh-CN") { %>
+        <link rel="dns-prefetch" href="https://pan.baidu.com"/>
+    <% } else { %>
+        <link rel="dns-prefetch" href="https://chart.googleapis.com"/>
+    <% } %>
+<% } %>
 
 
     <!-- Meta & Info -->
@@ -266,7 +299,7 @@ livere_uid: &#34;你的代码&#34;
 
     
         <meta property="article:published_time" content="Thu Sep 02 2021 17:19:12 GMT+0800">
-        <meta property="article:modified_time" content="Thu Sep 02 2021 18:43:02 GMT+0800">
+        <meta property="article:modified_time" content="Fri Sep 03 2021 22:46:12 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -289,7 +322,7 @@ livere_uid: &#34;你的代码&#34;
     "mainEntityOfPage": "https://heimdall-nss.github.io/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/index.html",
     "headline": "hexo主题Next->material切换踩坑",
     "datePublished": "Thu Sep 02 2021 17:19:12 GMT+0800",
-    "dateModified": "Thu Sep 02 2021 18:43:02 GMT+0800",
+    "dateModified": "Fri Sep 03 2021 22:46:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "NENEIIII",
@@ -496,7 +529,7 @@ mjx-container[display="true"] + br {
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Theme-hexo-Material"><span class="post-toc-text">Theme: [^ hexo-Material]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9D%A5%E6%AF%94%E5%8A%9B%E7%95%99%E8%A8%80"><span class="post-toc-text">来比力留言</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%BF%BD%E7%95%A5%E8%A6%81%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6"><span class="post-toc-text">忽略要编译的文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="post-toc-text">发布博客文章</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87"><span class="post-toc-text">设置首页不显示全文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%8F%92%E5%85%A5mermaid"><span class="post-toc-text">插入mermaid</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%A0%87%E7%AD%BE%E4%BA%91%E5%92%8C%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="post-toc-text">设置标签云和网易云音乐</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="post-toc-text">彩色标签页</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E4%BA%8E%E6%9B%B4%E6%8D%A2material%E4%B8%BB%E9%A2%98%E5%90%8E%E5%9C%A8%E8%83%8C%E6%99%AF%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B8%8D%E6%98%8E%E9%BB%91%E8%89%B2%E5%9B%BE%E6%A1%88"><span class="post-toc-text">关于更换material主题后在背景中出现的不明黑色图案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E6%88%91%E5%8F%91%E7%8E%B0material%E4%B8%8B%E7%9A%84%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E9%A2%84%E8%A7%88%E6%9C%89%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="post-toc-text">最后一个问题，我发现material下的首页文章预览有点问题？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E5%90%8E%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%EF%BC%8C%E7%9C%8B%E6%9C%89%E4%BA%BA%E8%AF%B4%E7%AD%8910min%E3%80%82%E3%80%82"><span class="post-toc-text">绑定域名后无法访问，看有人说等10min。。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#material%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E4%BA%91"><span class="post-toc-text">material中的标签云</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%8D%8F%E5%A6%88%EF%BC%8C%E4%B8%BA%E5%95%A5hexo-d%E4%B9%8B%E5%90%8E%E5%8F%88%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AE%E4%BA%86%E3%80%82%E3%80%82"><span class="post-toc-text">捏妈，为啥hexo d之后又不能访问了。。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BA%E5%95%A5%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E4%BA%86%E5%8F%88-%E5%88%9A%E9%85%8D%E7%BD%AE%E5%A5%BD%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%EF%BC%8C%E4%B8%8D%E7%9F%A5%E9%81%93%E5%8F%88%E6%8C%89%E5%95%A5%E4%BA%86%E3%80%82%E3%80%82"><span class="post-toc-text">为啥手机端无法访问了又(刚配置好可以访问，不知道又按啥了。。)</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Theme-hexo-Material"><span class="post-toc-text">Theme: [^ hexo-Material]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9D%A5%E6%AF%94%E5%8A%9B%E7%95%99%E8%A8%80"><span class="post-toc-text">来比力留言</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%BF%BD%E7%95%A5%E8%A6%81%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6"><span class="post-toc-text">忽略要编译的文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="post-toc-text">发布博客文章</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87"><span class="post-toc-text">设置首页不显示全文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%8F%92%E5%85%A5mermaid"><span class="post-toc-text">插入mermaid</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%A0%87%E7%AD%BE%E4%BA%91%E5%92%8C%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="post-toc-text">设置标签云和网易云音乐</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="post-toc-text">彩色标签页</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E4%BA%8E%E6%9B%B4%E6%8D%A2material%E4%B8%BB%E9%A2%98%E5%90%8E%E5%9C%A8%E8%83%8C%E6%99%AF%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B8%8D%E6%98%8E%E9%BB%91%E8%89%B2%E5%9B%BE%E6%A1%88"><span class="post-toc-text">关于更换material主题后在背景中出现的不明黑色图案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E6%88%91%E5%8F%91%E7%8E%B0material%E4%B8%8B%E7%9A%84%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E9%A2%84%E8%A7%88%E6%9C%89%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="post-toc-text">最后一个问题，我发现material下的首页文章预览有点问题？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E5%90%8E%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%EF%BC%8C%E7%9C%8B%E6%9C%89%E4%BA%BA%E8%AF%B4%E7%AD%8910min%E3%80%82%E3%80%82"><span class="post-toc-text">绑定域名后无法访问，看有人说等10min。。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#material%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E4%BA%91"><span class="post-toc-text">material中的标签云</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%8D%8F%E5%A6%88%EF%BC%8C%E4%B8%BA%E5%95%A5hexo-d%E4%B9%8B%E5%90%8E%E5%8F%88%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AE%E4%BA%86%E3%80%82%E3%80%82"><span class="post-toc-text">捏妈，为啥hexo d之后又不能访问了。。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BA%E5%95%A5%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E4%BA%86%E5%8F%88-%E5%88%9A%E9%85%8D%E7%BD%AE%E5%A5%BD%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%EF%BC%8C%E4%B8%8D%E7%9F%A5%E9%81%93%E5%8F%88%E6%8C%89%E5%95%A5%E4%BA%86%E3%80%82%E3%80%82"><span class="post-toc-text">为啥手机端无法访问了又(刚配置好可以访问，不知道又按啥了。。)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BC%98%E5%8C%96%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%9D%E8%AF%95"><span class="post-toc-text">关于优化访问速度的一些尝试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B0%86GitHub-page%E6%89%98%E7%AE%A1%E5%88%B0Vercel"><span class="post-toc-text">将GitHub page托管到Vercel</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -519,9 +552,9 @@ mjx-container[display="true"] + br {
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
             <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * <%= theme.thumbnail.random_amount %> + 1);
+    var randomNum = Math.floor(Math.random() * 83 + 1);
 
-    $('.post_thumbnail-random').attr('data-original', '<%= url_for(theme.img.random_thumbnail) %>' + randomNum + '.jpg');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material%20(' + randomNum + ').jpg');
     $('.post_thumbnail-random').addClass('lazy');
 </script>
 
@@ -871,7 +904,8 @@ npm install hexo-tag-cloud@^2.0.*
 <li><input checked disabled type="checkbox"> Enforce HTTPS </li>
 </ul>
 <p>HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.<br>When HTTPS is enforced, your site will only be served over HTTPS. <a target="_blank" rel="noopener" href="https://docs.github.com/articles/securing-your-github-pages-site-with-https">Learn more</a>.</p>
-
+<hr>
+<h2 id="关于优化访问速度的一些尝试"><a href="#关于优化访问速度的一些尝试" class="headerlink" title="关于优化访问速度的一些尝试"></a>关于优化访问速度的一些尝试</h2><h3 id="将GitHub-page托管到Vercel"><a href="#将GitHub-page托管到Vercel" class="headerlink" title="将GitHub page托管到Vercel"></a>将<code>GitHub page</code>托管到<code>Vercel</code></h3>
         
     
 
