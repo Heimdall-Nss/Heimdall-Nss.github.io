@@ -35,7 +35,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
 
 
 
@@ -232,7 +232,31 @@ CPU执行状态
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
 
 
 <!-- Import Material Icons -->
@@ -619,6 +643,18 @@ mjx-container[display="true"] + br {
 
     <!-- Qrcode -->
     
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aQXaDMAwFwNz/0u0B0sCXhB2SDqu8AMbjha0n6fHz1dcDDw8PDw8PDw/vZrxHfD2/9TzCHx978eTxmKO54eHh4W3hnWy1hx8+fqs6/qvfhbnh4eHhbeS92nDzY+D4mXxz780NDw8P71N4va0/OQzw8PDw/gPveNPP7+Lh4eF9Cq+XLEgC7iRort7Fw8PDey8vLzLt/721voeHh4cX8MotTUExLE9V5CndZtMVHh4e3gJevhFPiv0n6YPWwYCHh4d3B948HZC3C0yOnMvaVfHw8PAGvKuQhe07oDbDdDw8PLzFvElSICrkBwF070jAw8PDey/veIjk81VA75CIFh0PDw9vMW8FKU/I5s/nYDw8PLw9vOohkb/VW7JJigQPDw9vNa8XvPa27Pwoqi4THh4e3k7epLiVT+L4aEnGSQJxPDw8vD286mY9CZ2TQ6VaBsPDw8Pbz5tM7qpUQjV8H/WU4eHh4S3jTT6ZpCGSpWweQnh4eHiLefnGnach8qn3kr8nM8fDw8NbzKsWvVa3HVRTt82eMjw8PLwxLw9n56X9fLuvFsPw8PDw9vOq6YZqYF29W110PDw8vHfxJqFtNVxO0rV5sgMPDw9vD6965YyLJ50vOh4eHt5iXq+4lYTF1bJWtVm2WQDDw8PDu4hXbSPoheMJproQzVwLHh4e3kW8fIPOW6yS/6uLcjI+Hh4e3i15eXtBEjrnKWM8PDy8z+X1DoZq80GvnQsPDw9vJy9JRiSJg2ubEramcfHw8PAWFMB6idpeCa1XBsPDw8Nbzfu+Cw8PDw8PDw8P7wbXLyH9pYGfFD7WAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
 
     <!-- Tags (bookmark) -->
     
@@ -642,15 +678,6 @@ mjx-container[display="true"] + br {
     
 
     
-        
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
-                    </span>
-                </li>
-            </a>
         
     
 
@@ -996,6 +1023,14 @@ iii. 虚拟设备：模拟独占设备的那部分共享设备的空间
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2021/09/04/vercel/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -1096,7 +1131,7 @@ iii. 虚拟设备：模拟独占设备的那部分共享设备的空间
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1114,7 +1149,7 @@ iii. 虚拟设备：模拟独占设备的那部分共享设备的空间
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1160,7 +1195,7 @@ iii. 虚拟设备：模拟独占设备的那部分共享设备的空间
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">6</span>
+                <span class="sidebar-badge">7</span>
             </a>
         </li>
         

@@ -35,7 +35,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
 
 
 
@@ -203,7 +203,31 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
 
 
 <!-- Import Material Icons -->
@@ -523,6 +547,18 @@ mjx-container[display="true"] + br {
 
     <!-- Qrcode -->
     
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aUZbbIAwF0Ox/0+0CekreEzZ2p5evOU6G6PIhsNDn148eHzw8PDw8PDw8vJfxPvH487/WT/L513PWseHh4eEd4X1JtSPeOojkt4ax4eHh4R3kJSk7CXe9nSTJfRYbHh4e3vt5eepPjs54eHh4/wOvTfrrJ2s2Hh4e3jt5bVpPAHnqbz/Fw8PDe5Y3u6Y68/fR+z08PDy8gFe3NMUH5Tz159djUYR4eHh4N/NmJdr8MN2WcS8oGePh4eEd4bXpvn3SHtDzsm/9xoCHh4e3zcuDawGzC60Ljul4eHh4D/HWh+P96/9rfwUPDw/vJC8pIrSfzpoJ8nauuoyLh4eHdwOvnS5K0KOG1/bAXfeU4eHh4W3zdpJyW2ZNAPl111+f4+Hh4d3My9P37PpqvW0kG09ewsDDw8M7z0vS905L1v6yRkUNPDw8vJt5beJuqbPi7+zIjoeHh3eGlxcI8nB3irz5/MM3Bjw8PLxLeV/Ko3HQs1aq9kB/wRsDHh4e3gZvdtW0E8S1C4eHh4d3ntdSZwHlBdn2m3h4eHjP8tor/LaMe9URfKvpCg8PD+8GXkKdtQW0xdnkYgwPDw/vWd5+W+rOk7Yp4eLWATw8PLyA1462ULsfbl2qwMPDw7uZ94nHbDtpW6/y4/jwfg8PDw/vIl6yGbQH3/XSzDaMaOnx8PDwDvL2ixF3zFAvHx4eHt4recmlVNtkkH+Kh4eH9y/ydpoPZk1dxQsAHh4e3kFeUoyICqlBuEkBIllEPDw8vKd4OyWA/eTezvalyQAPDw/vZt7PG3h4eHh4eHh4eC8YvwHgEIaS+uV//wAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
 
     <!-- Tags (bookmark) -->
     
@@ -546,15 +582,6 @@ mjx-container[display="true"] + br {
     
 
     
-        
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
-                    </span>
-                </li>
-            </a>
         
     
 
@@ -711,7 +738,7 @@ def imshow(img):
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" id="post_nav-newer" class="prev-content">
+        <a href="/2021/09/02/blog/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -819,7 +846,7 @@ def imshow(img):
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -837,7 +864,7 @@ def imshow(img):
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -883,7 +910,7 @@ def imshow(img):
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">6</span>
+                <span class="sidebar-badge">7</span>
             </a>
         </li>
         

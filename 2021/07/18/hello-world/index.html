@@ -35,7 +35,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
 
 
 
@@ -211,7 +211,31 @@ Generate static files$ hexo generate
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
 
 
 <!-- Import Material Icons -->
@@ -444,6 +468,18 @@ Generate static files$ hexo generate
 
     <!-- Qrcode -->
     
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC3ElEQVR42u3aS27DMAwFwNz/0u0B2iTvUU7hSuNVEKQyR10Q/Dy+jnwe2NjY2NjY2NjY2LdkP+Lnl4Ne/ubZX0Uh/jjz5+c2ZmxsbOy92UkQbVivr6b95tn5RczY2NjYB7CT1+RpIwk3wbTxYGNjY2O3ySlJIbOrzC8LGxsbG3vGTlLaSqGSpDpsbGxs7LZBkxcPyVuSX84GD9jY2NinsdtW0R0+/+l8GxsbG/vG7JVlmlmJ8rr1n4wHhpFjY2Njb8rOE0NbSOSk/PtZnNjY2NinsWeD23yQkCTClWbT06vExsbG3pTdBtG2/pPT8hNmb8HGxsbem5204JMm0ew62qXMj8y3sbGxsf85ux2pztpJsytrU2A96MXGxsbelD0LfVaczBpSeRrDxsbGPoGdr9rM0s9srJu/94KmEjY2Nvam7CgllIOEdpzcFirY2NjYJ7OTNn3Ly6+pTZZtSsPGxsbem523fmYjhJX200pii3pp2NjY2BuxV0atbeq6tpE0bCphY2Njb8RO0kxShCSf2+FueylvrhUbGxt7a3bygjzclfXNtvVf/NuwsbGxN2W3BUa7vjNLde0QIoocGxsbe1N21I4ZYWaLNSvj4bqphI2Njb0Fu01ObXmQhJu0h9ZHyNjY2NgnsPMyYLYcmTekZifUTSVsbGzsLdh5ImmbSrNwZ6dhY2NjY89Wc5KWU9u0uqoEWlrZwcbGxv637FljqB0zzJLlbAEIGxsb+2T2VaPWdui7cuabi8DGxsbelN0+s7KkXQBqB7rRe7GxsbE3Za8s0+Sp7trxQFICRXkbGxsbeyP2StJqh6/JkKBNe1FBhY2NjX0Au13EyYeybbJsn+jt2NjY2NjLKzuzZtNsnaieimBjY2MfyW6Xb/JLmQ0e3pQ62NjY2AewPxF0u16ZlC7DsTE2Njb21uzZUuNs+WbGSxLbB+fb2NjY2Ddmn/NgY2NjY2NjY2Nj3+b5BhtachQwguweAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
 
     <!-- Tags (bookmark) -->
     
@@ -458,15 +494,6 @@ Generate static files$ hexo generate
     
 
     
-        
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
-                    </span>
-                </li>
-            </a>
         
     
 
@@ -685,7 +712,7 @@ Generate static files$ hexo generate
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -703,7 +730,7 @@ Generate static files$ hexo generate
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -749,7 +776,7 @@ Generate static files$ hexo generate
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">6</span>
+                <span class="sidebar-badge">7</span>
             </a>
         </li>
         
