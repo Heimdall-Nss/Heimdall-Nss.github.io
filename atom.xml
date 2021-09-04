@@ -6,7 +6,7 @@
   <link href="https://heimdall-nss.github.io/atom.xml" rel="self"/>
   
   <link href="https://heimdall-nss.github.io/"/>
-  <updated>2021-09-02T09:42:14.900Z</updated>
+  <updated>2021-09-04T01:49:03.887Z</updated>
   <id>https://heimdall-nss.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>暑期系列：操作系统</title>
+    <link href="https://heimdall-nss.github.io/2021/09/04/os/"/>
+    <id>https://heimdall-nss.github.io/2021/09/04/os/</id>
+    <published>2021-09-04T01:40:24.000Z</published>
+    <updated>2021-09-04T01:49:03.887Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-os概述"><a href="#1-os概述" class="headerlink" title="1 os概述"></a>1 os概述</h2><ul><li>功能</li></ul><pre><code>    用户接口    文件管理    存储器管理    处理机管理    设备管理</code></pre><ul><li>特征</li></ul><pre><code>    并发：一段时间 多道程序 宏观同时    虚拟：一个物理--&gt;多个逻辑 多个物理--&gt;一个逻辑    共享：互斥共享 "同时"共享    异步(不确定性)：[执行顺序] [执行时间]</code></pre><ul><li>CPU执行状态</li></ul><pre><code>操作系统执行在核心态下原语执行在核心态下用户程序执行在用户态下</code></pre><h2 id="2-处理机管理"><a href="#2-处理机管理" class="headerlink" title="2 处理机管理"></a>2 处理机管理</h2><ul><li>进程与线程</li></ul><pre><code>    进程：系统资源分配的基本单位    线程：独立调度的基本单位 共享资源有：**sds*</code></pre><blockquote><p>进程五态<img src="/2021/09/04/os/image-20210813132505956.png" alt="image-20210813132505956" style="zoom:50%;"></p></blockquote><ul><li><p>进程控制<br>实现手段：进程控制原语<br>功能：创建、撤销进程，进程的状态转换</p></li><li><p>进程同步机制<br>目的：保证进程间的两种制约关系</p><ol><li><p>同步：多进程<strong>合作完成</strong>任务时要按照一定的时序执行</p></li><li><p>互斥：多个进程访问<strong>共享资源</strong>时要保证互斥</p></li></ol><p>原则：</p><ol><li><p>空闲让进</p></li><li><p>忙则等待</p></li><li><p>有限等待</p></li><li><p>让权等待</p></li></ol><p>信号量机制</p><ol><li><p>整数型<img src="/2021/09/04/os/image-20210813140742705.png" alt="image-20210813140742705" style="zoom: 33%;"></p></li><li><p>记录型<img src="/2021/09/04/os/image-20210813141014601.png" alt="image-20210813141014601" style="zoom:33%;"></p></li></ol></li><li><p>PV操作[^ 原理见OneNote-OS-进程管理-进程同步机制]</p></li></ul><blockquote><p>生产者-消费者问题(有界缓冲区)<br>读者-写者问题<br>哲学家就餐问题<br>睡眠理发师问题</p></blockquote><ul><li>进程通信</li></ul><pre><code>    低级通信：信息量少(如用来同步发送的信号量)    高级通信：共享存储器(剪切板) 消息传递(mail like) 管道通信(2个之间)</code></pre><ul><li>进程调度</li></ul><pre><code>    FCFS    SJF    SRTF  - 抢    HRRF    HPF  - 抢    RR   - 抢    MFQ</code></pre><ul><li>死锁</li></ul><pre><code>    两个或多个进程被无限期地阻塞、相互等待    必须同时满足：互斥 请求与保持 不剥夺 环路等待    预防与避免</code></pre><ul><li>银行家算法–死锁避免</li></ul><pre><code>见OneNote-每日快速笔记-os答疑-第一问</code></pre><h2 id="3-存储器管理"><a href="#3-存储器管理" class="headerlink" title="3 存储器管理"></a>3 存储器管理</h2><blockquote><p>概念区分</p></blockquote><pre><code>物理地址空间（或物理空间、绝对空间）：由内存一系列存储单元所限定的地址范围；逻辑地址空间（用户编程空间）：由程序中逻辑地址组成的地址范围相对地址（或逻辑地址）：用户程序经编译之后的每个目标模块都从0开始顺序编址，这种用户编程所用的地址称为相对地址或逻辑地址绝对地址（或物理地址、内存地址）：内存是由若干存贮单元组成的，每个存贮单元有一个编号称为物理地址。地址变换（重定位）：把逻辑地址转换为相应物理地址的过程</code></pre><blockquote><p>程序如何装入内存：编译-&gt;链接-&gt;装入</p></blockquote><ol><li>三种链接方式 : 链接程序将目标程序和所需库函数链接在一起，形成完整的<strong>装入模块</strong></li></ol><pre><code>静态链接：事先链接完后不再拆开装入时动态链接：边装入边链接，发生一个外部模块调用后装入程序再去找相应模块装入内存运行时动态链接：执行时，发现调用的模块未装入内存时OS立即去找再装入内存，并把它链接到调用者模块上</code></pre><ol start="2"><li>三种装入方式 : 装入程序将装入模块装入内存——涉及<strong>地址转换(重定位)</strong></li></ol><pre><code>绝对装入：编译时就可给出物理地址，在装入时不用再转换地址（只有单道程序才行）可重定位装入：静态重定位，装入时进行地址转换，且不再更改动态运行时装入：动态重定位，装入内存时不转换地址(指令地址寄存器还无地址)直至CPU来执行。允许程序在内存中移动</code></pre><blockquote><p>内存分配</p></blockquote><hr><p>连续分配：单一连续 固定分区 动态分区[分配算法]<br>离散分配：<a href="https://lixiang.blog.csdn.net/article/details/119214282">分页 分段</a><br>虚拟存储：具有请求调入功能和置换功能</p><hr><blockquote><p>页面分配 页面置换算法</p></blockquote><pre><code>    分配:最开始为进程分配多少物理块        - 固定：平均 比例(大小) 优先权        - 可变：预分配 最小物理块    置换：最佳 FIFO LRU Clock LFU    </code></pre><blockquote><p>区分：os的缓存与CPU的缓存<br>    - 快表：地址映射机制中<br>    - 高速缓存：位于CPU和内存之间</p></blockquote><h2 id="4-文件管理-重点看这里"><a href="#4-文件管理-重点看这里" class="headerlink" title="4 文件管理[^ 重点看这里]"></a>4 文件管理[^ 重点看这里]</h2><ul><li><p>文件和文件系统</p><h5 id="文件：文件名、内容、属性-文件类型、长度、位置、建立时间"><a href="#文件：文件名、内容、属性-文件类型、长度、位置、建立时间" class="headerlink" title="文件：文件名、内容、属性[文件类型、长度、位置、建立时间]"></a>文件：文件名、内容、属性[文件类型、长度、位置、建立时间]</h5><p><mark>基本内容和属性信息被存储在存储器中</mark>,用户通过文件名来访问相应文件</p><h5 id="文件系统：OS中管理文件的那部分软件-管理的文件-文件属性"><a href="#文件系统：OS中管理文件的那部分软件-管理的文件-文件属性" class="headerlink" title="文件系统：OS中管理文件的那部分软件+管理的文件+文件属性"></a>文件系统：OS中管理文件的那部分软件+管理的文件+文件属性</h5></li><li><p>文件的逻辑结构：文件在用户面前所呈现的形式</p><ol><li><p>无结构文件–字符流式文件</p></li><li><p>有结构文件–记录式文件</p><blockquote><p>顺序文件: 按某种顺序排列形成的文件</p></blockquote><blockquote><p>索引文件：建立一张索引表，每个记录在表中对应一个索引项，索引项按照记录中的某个关键字域排序<img src="/2021/09/04/os/image-20210817154306671.png" class title="image-20210817154306671"></p></blockquote><blockquote><p>索引顺序文件： 将顺序文件中的所有记录分为若干组，每组的第一个记录在索引表中有对应表项，查找任意记录时，先据关键字查索引表（此时可采用各种查找算法），找到所在组的第一个记录，之后顺序查找该组。<img src="/2021/09/04/os/image-20210817154445255.png" class title="image-20210817154445255"></p></blockquote></li></ol></li><li><p>物理结构：文件在<strong>外存</strong>上的存储组织形式</p><ol><li><p>磁带文件：磁带只能顺序访问(也即只有顺序结构)</p></li><li><p>磁盘文件：顺序存取、随机存取</p><blockquote><p>连续分配–顺序式文件结构–&gt;可采用顺序存取，也可以随机存取</p><p>链接分配–链接式文件结构–&gt;隐式链接文件结构[^ 每个物理块<strong>自身</strong>存放下一物理块的链接指针]只能只能顺序存取，不能随机存取；显式链接文件结构[^ 各物理块指针显式地放在内存的一张表格FAT中]能顺序存取，能随机存取</p><p>索引分配–索引式文件结构–&gt;可顺序存取，也可随机存取</p></blockquote></li></ol></li><li><p>文件目录：一种数据结构，标识文件及其物理地址</p><h5 id="两种结构"><a href="#两种结构" class="headerlink" title="两种结构"></a>两种结构</h5><ol><li>含索引节点[指向文件对应的描述信息节点]<img src="/2021/09/04/os/image-20210817153244643.png" alt="image-20210817153244643" style="zoom:45%;"></li><li>hash方法<img src="/2021/09/04/os/image-20210817153505139.png" alt="image-20210817153505139" style="zoom:50%;"></li></ol></li><li><p>文件共享：指系统应允许多个用户(进程)共享同一份文件。这样，在系统中只需保留该共享文件的一份副本</p><blockquote><p> 在文件目录中只设置文件名及指向相应索引结点的指针<img src="/2021/09/04/os/image-20210817153757724.png" alt="image-20210817153757724" style="zoom:33%;"></p></blockquote></li></ul><h2 id="5-设备管理"><a href="#5-设备管理" class="headerlink" title="5 设备管理"></a>5 设备管理</h2><ul><li><p>I/O设备</p><ol><li><p>从交换单位看——</p><ol><li>字符设备：传输单位&lt;字节&gt; ，不可寻址<br> 如：显示终端、键盘、打印机、异步通讯接口</li><li>块设备：传输单位&lt;数据块&gt; ，可寻址<br> 如：磁盘(一个扇区)、摄像头(一帧)</li></ol></li><li><p>从使用方式看——</p><pre><code>i. 独占设备：打印机ii. 共享设备：磁带、磁盘iii. 虚拟设备：模拟独占设备的那部分共享设备的空间</code></pre></li></ol></li><li><p>设备管理的作用(功能)</p><ol><li>对设备的分配和回收</li><li>对设备的控制</li><li>管理缓冲区，平衡低速设备和高速处理器</li><li>实现虚拟设备，提高并发度</li></ol></li><li><p>I/O系统的层次结构</p><img src="/2021/09/04/os/image-20210904094814100.png" class title="image-20210904094814100"></li><li><p>设备控制方式：也即CPU与设备的并行方式</p><ol><li><p>程序直接控制：不断查询I/O控制器状态，就绪才进行下一步 </p><p>【CPU全程参与】</p></li><li><p>中断驱动：例如–&gt;在输入时，当设备控制器收到CPU发来的读命令后，便去控制相应的输入设备读数据。一旦数据进入数据寄存器，控制器便通过控制线向CPU发送一中断信号，由CPU检查输入过程中是否出错，若无错，便向控制器发送取走数据的信号，然后再通过控制器及数据线，将数据写入内存指定单元中 </p><p>【CPU只参与中断处理】</p><p>【中断频率：每个字节传输完都要中断】</p></li><li><p>DMA驱动：DMAC直接与内存相连，与CPU分时复用内存，CPU只需驱动DMA然后数据控制全程在DMA控制下进行，结束时再向CPU发中断</p><img src="/2021/09/04/os/image-20210825114618914.png" alt="image-20210825114618914" style="zoom:50%;"><p>【CPU工作时间：启动DMA，结束时处理中断】</p><p>【中断频率：一次I/O指令能读写一个连续的数据块】</p></li><li><p>通道方式：是DMA方式的发展，把以数据块为单位的干预，减少到对一组数据块为单位的干预</p><p>【CPU同样工作在开始和结束】</p><p>【中断频率：一条I/O指令可以读写多个离散的数据块且将它们分别传送到不同的内存区域】</p></li></ol><img src="/2021/09/04/os/image-20210825115627372.png" alt="image-20210825115627372" style="zoom:50%;"></li><li><p>设备的分配</p><ol><li>算法：先来先服务 || 优先级高者优先</li></ol></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-os概述&quot;&gt;&lt;a href=&quot;#1-os概述&quot; class=&quot;headerlink&quot; title=&quot;1 os概述&quot;&gt;&lt;/a&gt;1 os概述&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    用户接口
+    文件管理
+    存储器管理
+    处理机管理
+    设备管理
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;特征&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    并发：一段时间 多道程序 宏观同时
+    虚拟：一个物理--&amp;gt;多个逻辑 多个物理--&amp;gt;一个逻辑
+    共享：互斥共享 &quot;同时&quot;共享
+    异步(不确定性)：[执行顺序] [执行时间]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU执行状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;操作系统执行在核心态下
+原语执行在核心态下
+用户程序执行在用户态下
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;2-处理机管理&quot;&gt;&lt;a href=&quot;#2-处理机管理&quot; class=&quot;headerlink&quot; title=&quot;2 处理机管理&quot;&gt;&lt;/a&gt;2 处理机管理&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;进程与线程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    进程：系统资源分配的基本单位
+    线程：独立调度的基本单位 共享资源有：**sds*
+&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="操作系统" scheme="https://heimdall-nss.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="暑期系列" scheme="https://heimdall-nss.github.io/tags/%E6%9A%91%E6%9C%9F%E7%B3%BB%E5%88%97/"/>
+    
+    <category term="专业课" scheme="https://heimdall-nss.github.io/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+    <category term="操作系统" scheme="https://heimdall-nss.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>暑期系列：数据库杂七杂八</title>
@@ -86,11 +140,11 @@
     <category term="数据库" scheme="https://heimdall-nss.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="数据库" scheme="https://heimdall-nss.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="暑期系列" scheme="https://heimdall-nss.github.io/tags/%E6%9A%91%E6%9C%9F%E7%B3%BB%E5%88%97/"/>
     
     <category term="专业课" scheme="https://heimdall-nss.github.io/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+    <category term="数据库" scheme="https://heimdall-nss.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -99,7 +153,7 @@
     <link href="https://heimdall-nss.github.io/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/"/>
     <id>https://heimdall-nss.github.io/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/</id>
     <published>2021-09-02T09:19:12.000Z</published>
-    <updated>2021-09-03T14:46:12.065Z</updated>
+    <updated>2021-09-03T15:19:23.631Z</updated>
     
     <content type="html"><![CDATA[<p>今天有空上来换个主题，顺便完善下一些效果</p><hr><p>[^ hexo-Material]: 以下只记录一些问题, hexo的相关配置省略</p><h2 id="Theme-hexo-Material"><a href="#Theme-hexo-Material" class="headerlink" title="Theme: [^ hexo-Material]"></a>Theme: [^ hexo-Material]</h2><h4 id="来比力留言"><a href="#来比力留言" class="headerlink" title="来比力留言"></a>来比力留言</h4><p>“将data-uid后的代码复制，然后打开主题配置文件_config.yml，找到livere_uid，将代码复制到其后即可：”</p><pre><code class="text">livere_uid: "你的代码"</code></pre><p><sup>问</sup> 这里代码外有””吗？</p><ul><li><input checked disabled type="checkbox"> 傻了，人家说的是<code>data-uid</code>之后的代码</li></ul><h4 id="忽略要编译的文件"><a href="#忽略要编译的文件" class="headerlink" title="忽略要编译的文件"></a>忽略要编译的文件</h4><p>搜索引擎确认网站所有权时往往会提供一个html文件来进行验证，要是这个文件被渲染了，验证自然就会失败了。或者，有时候会有一些文件不希望Hexo渲染的，因此有必要针对某个文件或者目录进行排除。Hexo的配置文件中提供了配置项skip_render。只有source目录下的文件才会发布到public（能够在网络上访问到），因此Hexo只渲染source目录下的文件。skip_render参数设置的路径是相对于source目录的路径。</p><pre><code class="text">skip_render:   #部署时不包含的文件#单个文件skip_render: hello.html#单个文件夹下全部文件skip_render: test/* #单个文件夹下指定类型文件skip_render: test/*.md  #单个文件夹下全部文件以及子目录skip_render: test/**  #跳过多个目录，或者多个文件skip_render: ['*.html', demo/**, test/*]</code></pre><h4 id="发布博客文章"><a href="#发布博客文章" class="headerlink" title="发布博客文章"></a>发布博客文章</h4><p>1 修正图片显示问题</p><p>经过上面的配置后，发现上传的博客文章里面的本地图片居然显示不来（没有同步上传）。</p><p>于是，找到解决方案：</p><p>1 把主页配置文件<code>_config.yml</code> 里的<code>post_asset_folder:</code>这个选项设置为<code>true</code></p><p>2 在你的hexo目录下执行这样一句话<code>npm install hexo-asset-image --save</code>，这是下载安装一个可以上传本地图片的插件</p><p>3 等待一小段时间后，再运行<code>hexo n "xxxx"</code>来生成<code>md</code>博文时，<code>/source/_posts</code>文件夹内除了<code>xxxx.md</code>文件还有一个同名的文件夹</p><p>4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</p><pre><code class="text">  {% asset_img 图片名.jpg 你想输入的替代文字 %}</code></pre><p>注意： <code>xxxx</code>是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入<code>xxxx</code>这个文件夹内就好了，很像引用相对路径。</p><h4 id="设置首页不显示全文"><a href="#设置首页不显示全文" class="headerlink" title="设置首页不显示全文"></a>设置首页不显示全文</h4><p>next7.8里默认就是不显示，都设置好了<br>material里只有一行代码也是默认<code>true</code>，但字数感觉不太对，记录在后面</p><h4 id="插入mermaid"><a href="#插入mermaid" class="headerlink" title="插入mermaid"></a>插入mermaid</h4><p><strong>Next</strong>下</p><blockquote><p>失败，rnm明明又是按照[原文档](<a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams">webappdevelp/hexo-filter-mermaid-diagrams: mermaid diagrams for hexo (github.com)</a>)做的</p><ul><li><input checked disabled type="checkbox"> 已解决: 除了上述步骤，还需要在主题配置文件中把mermaid改成enable</li></ul></blockquote><p><strong>Material</strong>下</p><blockquote><ul><li><input disabled type="checkbox"> 待解决</li></ul></blockquote><h4 id="设置标签云和网易云音乐"><a href="#设置标签云和网易云音乐" class="headerlink" title="设置标签云和网易云音乐"></a>设置标签云和网易云音乐</h4><p>以下是在<strong>Next</strong>主题中的配置</p><pre><code>#npm安装标签云插件npm install hexo-tag-cloud@^2.0.* </code></pre><p>🤫在主题文件夹找到文件 <code>theme/next/layout/_macro/sidebar.swig</code>, 然后添加如下代码：</p><pre><code>  &lt;div class="site-overview-wrap sidebar-panel"&gt;    {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}    {{- next_inject('sidebar') }}  &lt;/div&gt;  {%- if theme.back2top.enable and theme.back2top.sidebar %}    &lt;div class="back-to-top motion-element"&gt;      &lt;i class="fa fa-arrow-up"&gt;&lt;/i&gt;      &lt;span&gt;0%&lt;/span&gt;    &lt;/div&gt;  {%- endif %}####标签云代码 文章添加标签就可以显示出来    {%- if site.tags.length &gt; 1 %}      &lt;script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcloud.js') }}"&gt;&lt;/script&gt;      &lt;script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcanvas.js') }}"&gt;&lt;/script&gt;      &lt;div class="widget-wrap"&gt;        &lt;h3 class="widget-title"&gt;标签云&lt;/h3&gt;        &lt;div id="myCanvasContainer" class="widget tagcloud"&gt;          &lt;canvas width="250" height="250" id="resCanvas" style="width:100%"&gt;            {{ list_tags() }}          &lt;/canvas&gt;        &lt;/div&gt;      &lt;/div&gt;      ####网易云音乐代码 自动播放      &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=1428534769&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt;    {%- endif %}&lt;/div&gt;</code></pre><ul><li><input checked disabled type="checkbox"> 问题：出现乱码？？<br>解决：按照<a href="https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md">官方</a>给的instruction重新配置</li></ul><h4 id="彩色标签页"><a href="#彩色标签页" class="headerlink" title="彩色标签页"></a>彩色标签页</h4><p>以下是在<strong>Next</strong>主题下的配置<br><strong>🤫</strong>在 /themes/next/layout/ 目录下，新增 tag-color.swig 文件，填入如下内容:**</p><pre><code>#直接覆盖掉源文件&lt;script type="text/javascript"&gt;     var alltags = document.getElementsByClassName('tag-cloud-tags');     var tags = alltags[0].getElementsByTagName('a');     for (var i = tags.length - 1; i &gt;= 0; i--) {       var r=Math.floor(Math.random()*75+130);       var g=Math.floor(Math.random()*75+100);       var b=Math.floor(Math.random()*75+80);       tags[i].style.background = "rgb("+r+","+g+","+b+")";     }&lt;/script&gt;&lt;style&gt;  .tag-cloud-tags{    /*font-family: Helvetica, Tahoma, Arial;*/    /*font-weight: 100;*/    text-align: center;    counter-reset: tags;  }  .tag-cloud-tags a{    border-radius: 6px;    padding-right: 5px;    padding-left: 5px;    margin: 8px 5px 0px 0px;  }  .tag-cloud-tags a:before{    content: "🔖";  }  .tag-cloud-tags a:hover{     box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);     transform: scale(1.1);     /*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/     transition-duration: 0.15s;  }&lt;/style&gt;</code></pre><p><strong>在同级目录的 page.swig 中引入 tag-color.swig</strong></p><pre><code>#找一下有没有相识的这一段，有的话覆盖掉，没有就粘贴上去  &lt;div class="tag-cloud"&gt;        &lt;!-- 目前共计xxx个标签        &lt;div class="tag-cloud-title"&gt;            {{ _p('counter.tag_cloud', site.tags.length) }}        &lt;/div&gt;        --&gt;            &lt;div class="tag-cloud-tags"&gt;          {{ tagcloud({min_font: 10, max_font: 15, amount: 300, color: true, start_color: '#ccc', end_color: '#111'}) }}        &lt;/div&gt;      &lt;/div&gt;    +     {% include 'tag-color.swig' %}        {% elif page.type === 'categories' %}      &lt;div class="category-all-page"&gt;        &lt;div class="category-all-title"&gt;            {{ _p('counter.categories', site.categories.length) }}        &lt;/div&gt;        &lt;div class="category-all"&gt;          {{ list_categories() }}        &lt;/div&gt;      &lt;/div&gt;</code></pre><p>以下是文章底部的标签样式（代码拷入 /themes/next/source/css/_schemes/(自己选择的主题)/index.styl 即可</p><pre><code>*文章底部标签样式*/.posts-expand .post-tags a {  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);  font-family: 'Comic Sans MS', sans-serif;  transition: .2s ease-out;  padding: 3px 5px;  margin: 5px;  background: #f5f5f5;  border-bottom: none;  border-radius: 15px;  +mobile(){    padding: 1px 3px;    font-size: 8px;  }  &amp;:hover {    background: rgba(100,154,182,0.902);    color: #fff;    -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);    -moz-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  }}</code></pre><p><sup>问</sup> 没效果？？</p><p>艹改了一圈又出问题，头好痛睡觉去了</p><hr><h4 id="关于更换material主题后在背景中出现的不明黑色图案"><a href="#关于更换material主题后在背景中出现的不明黑色图案" class="headerlink" title="关于更换material主题后在背景中出现的不明黑色图案"></a>关于更换material主题后在背景中出现的不明黑色图案</h4><p>就是说搞了一下午都没解决，重新查看了文档和之前参考的文章，不知道哪一步配置出错了，结果今早上我把之前安装的Next适配的插件卸载了就好了？？（卸载了hexo-cake-moon）</p><h4 id="最后一个问题，我发现material下的首页文章预览有点问题？"><a href="#最后一个问题，我发现material下的首页文章预览有点问题？" class="headerlink" title="最后一个问题，我发现material下的首页文章预览有点问题？"></a>最后一个问题，我发现material下的首页文章预览有点问题？</h4><p>设置的是显示20个字，然而并不起作用。。。</p><p>代码的字数不计算吗？？</p><ul><li><input disabled type="checkbox"> 待解决 </li></ul><h4 id="绑定域名后无法访问，看有人说等10min。。"><a href="#绑定域名后无法访问，看有人说等10min。。" class="headerlink" title="绑定域名后无法访问，看有人说等10min。。"></a>绑定域名后无法访问，看有人说等10min。。</h4><p>。。等待中</p><ul><li><input checked disabled type="checkbox"> 官方有给出[解决方案](<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a>)【采用ping的方式不行，因为ip要变】</li></ul><p>省流提醒👉🏾下面四条都要解析到<code>A</code>记录</p><pre><code>185.199.108.153185.199.109.153185.199.110.153185.199.111.153</code></pre><h4 id="material中的标签云"><a href="#material中的标签云" class="headerlink" title="material中的标签云"></a>material中的标签云</h4><p>脚本都已经写好了，但貌似没什么动效？有时间研究下修改</p><h4 id="捏妈，为啥hexo-d之后又不能访问了。。"><a href="#捏妈，为啥hexo-d之后又不能访问了。。" class="headerlink" title="捏妈，为啥hexo d之后又不能访问了。。"></a>捏妈，为啥<code>hexo d</code>之后又不能访问了。。</h4><ul><li><input checked disabled type="checkbox"> 等一会就好了、。、</li></ul><h4 id="为啥手机端无法访问了又-刚配置好可以访问，不知道又按啥了。。"><a href="#为啥手机端无法访问了又-刚配置好可以访问，不知道又按啥了。。" class="headerlink" title="为啥手机端无法访问了又(刚配置好可以访问，不知道又按啥了。。)"></a>为啥手机端无法访问了又(刚配置好可以访问，不知道又按啥了。。)</h4><p>我好像只按了一个这个：先记录一下</p><ul><li><input checked disabled type="checkbox"> Enforce HTTPS </li></ul><p>HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.<br>When HTTPS is enforced, your site will only be served over HTTPS. <a href="https://docs.github.com/articles/securing-your-github-pages-site-with-https">Learn more</a>.</p><hr><h2 id="关于优化访问速度的一些尝试"><a href="#关于优化访问速度的一些尝试" class="headerlink" title="关于优化访问速度的一些尝试"></a>关于优化访问速度的一些尝试</h2><h3 id="将GitHub-page托管到Vercel"><a href="#将GitHub-page托管到Vercel" class="headerlink" title="将GitHub page托管到Vercel"></a>将<code>GitHub page</code>托管到<code>Vercel</code></h3>]]></content>
     
@@ -210,11 +264,11 @@ style G fill:#ccf&lt;/pre&gt;
     <category term="计算机组成原理" scheme="https://heimdall-nss.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
     
+    <category term="计组" scheme="https://heimdall-nss.github.io/tags/%E8%AE%A1%E7%BB%84/"/>
+    
     <category term="暑期系列" scheme="https://heimdall-nss.github.io/tags/%E6%9A%91%E6%9C%9F%E7%B3%BB%E5%88%97/"/>
     
     <category term="专业课" scheme="https://heimdall-nss.github.io/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
-    
-    <category term="计组" scheme="https://heimdall-nss.github.io/tags/%E8%AE%A1%E7%BB%84/"/>
     
   </entry>
   

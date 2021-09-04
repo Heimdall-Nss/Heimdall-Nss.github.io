@@ -50,6 +50,8 @@
     
     <title>
         
+            暑期系列：操作系统 | 
+        
         COOLGuysneverSleep
     </title>
 
@@ -58,8 +60,37 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="欢迎光临">
-    <meta name="keywords" content="">
+    <meta name="description" itemprop="description" content="1 os概述
+功能
+
+    用户接口
+    文件管理
+    存储器管理
+    处理机管理
+    设备管理
+
+
+特征
+
+    并发：一段时间 多道程序 宏观同时
+    虚拟：一个物理--&amp;gt;多个逻辑 多个物理--&amp;gt;一个逻辑
+    共享：互斥共享 &#34;同时&#34;共享
+    异步(不确定性)：[执行顺序] [执行时间]
+
+
+CPU执行状态
+
+操作系统执行在核心态下
+原语执行在核心态下
+用户程序执行在用户态下
+
+2 处理机管理
+进程与线程
+
+    进程：系统资源分配的基本单位
+    线程：独立调度的基本单位 共享资源有：**sds*
+">
+    <meta name="keywords" content=",暑期系列,专业课,操作系统">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -86,6 +117,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?uVzgA6RLrOm13Ukw8Qgy+A==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -217,7 +251,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="COOLGuysneverSleep">
-    <meta name="msapplication-starturl" content="https://heimdall-nss.github.io/">
+    <meta name="msapplication-starturl" content="https://heimdall-nss.github.io/2021/09/04/os/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="COOLGuysneverSleep">
@@ -232,13 +266,45 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://heimdall-nss.github.io/">
+    <meta property="og:url" content="https://heimdall-nss.github.io/2021/09/04/os/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="COOLGuysneverSleep">
+    <meta property="og:title" content="暑期系列：操作系统 | COOLGuysneverSleep">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="欢迎光临">
-    
+    <meta property="og:description" content="1 os概述
+功能
 
+    用户接口
+    文件管理
+    存储器管理
+    处理机管理
+    设备管理
+
+
+特征
+
+    并发：一段时间 多道程序 宏观同时
+    虚拟：一个物理--&amp;gt;多个逻辑 多个物理--&amp;gt;一个逻辑
+    共享：互斥共享 &#34;同时&#34;共享
+    异步(不确定性)：[执行顺序] [执行时间]
+
+
+CPU执行状态
+
+操作系统执行在核心态下
+原语执行在核心态下
+用户程序执行在用户态下
+
+2 处理机管理
+进程与线程
+
+    进程：系统资源分配的基本单位
+    线程：独立调度的基本单位 共享资源有：**sds*
+">
+    <meta property="og:article:tag" content="暑期系列"> <meta property="og:article:tag" content="专业课"> <meta property="og:article:tag" content="操作系统"> 
+
+    
+        <meta property="article:published_time" content="Sat Sep 04 2021 09:40:24 GMT+0800">
+        <meta property="article:modified_time" content="Sat Sep 04 2021 09:49:03 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -246,35 +312,72 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://heimdall-nss.github.io" />
+        <link rel="canonical" href="https://heimdall-nss.github.io/2021/09/04/os/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
+
+
 <script type="application/ld+json">
 {
-    "@context": "http://schema.org",
-    "@type": "Website",
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://heimdall-nss.github.io/2021/09/04/os/index.html",
+    "headline": "暑期系列：操作系统",
+    "datePublished": "Sat Sep 04 2021 09:40:24 GMT+0800",
+    "dateModified": "Sat Sep 04 2021 09:49:03 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "NENEIIII",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "欢迎光临"
+    },
     "publisher": {
         "@type": "Organization",
         "name": "COOLGuysneverSleep",
-        "logo": "/img/favicon.png"
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
     },
-    "url": "https://heimdall-nss.github.io",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://heimdall-nss.github.io"
-    },
-    "description": "欢迎光临"
+    "keywords": ",暑期系列,专业课,操作系统",
+    "description": "1 os概述
+功能
+
+    用户接口
+    文件管理
+    存储器管理
+    处理机管理
+    设备管理
+
+
+特征
+
+    并发：一段时间 多道程序 宏观同时
+    虚拟：一个物理--&amp;gt;多个逻辑 多个物理--&amp;gt;一个逻辑
+    共享：互斥共享 &#34;同时&#34;共享
+    异步(不确定性)：[执行顺序] [执行时间]
+
+
+CPU执行状态
+
+操作系统执行在核心态下
+原语执行在核心态下
+用户程序执行在用户态下
+
+2 处理机管理
+进程与线程
+
+    进程：系统资源分配的基本单位
+    线程：独立调度的基本单位 共享资源有：**sds*
+",
 }
 </script>
-
-
 
 
     
@@ -421,703 +524,497 @@ mjx-container[display="true"] + br {
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--4dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.jpg)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                欢迎光临
-            
-        
-        </a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>NENEIIII</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--4dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-
-
-
-
-    <!-- Local -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
-            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder=""/>
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-        </form>
-    </div>
-    <div id="local-search-result"></div>
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="https://github.com/Heimdall-Nss" target="_blank">
-            <img src="/img/logo.png" alt="logo" />
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
         </a>
     </div>
+    -->
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>COOLGuysneverSleep</strong>
-        </div>
-        <div class="section-spacer"></div>
 
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/about" title="About me">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        About me
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/tags" title="TagCloud">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        TagCloud
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/timeline" title="Timeline">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Timeline
-                    </li>
-                </a>
-            
-        </ul>
-
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-                <!-- All Site UV -->
-                <a class="index_share-link" href="#">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        <span id="busuanzi_container_site_uv">
-                            <span id="busuanzi_value_site_uv"></span>&nbsp;Views
-                        </span>
-                    </li>
-                </a>
-            
-
-            
-
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=COOLGuysneverSleep&url=https://heimdall-nss.github.io&pic=https://heimdall-nss.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Weibo
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=COOLGuysneverSleep&url=https://heimdall-nss.github.io&via=NENEIIII" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Twitter
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://heimdall-nss.github.io" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Facebook
-                    </li>
-                </a>
-            
-
-            
-
-            
-                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://heimdall-nss.github.io&title=COOLGuysneverSleep" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to LinkedIn
-                    </li>
-                </a>
-            
-
-            
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=COOLGuysneverSleep&title=COOLGuysneverSleep&summary=欢迎光临&pics=https://heimdall-nss.github.io/img/favicon.png&url=https://heimdall-nss.github.io" target="_blank">
-                    <li class="mdl-menu__item">
-                        Share to QQ
-                    </li>
-                </a>
-            
-
-            
-        </ul>
-    </div>
-</div>
-
+    <!-- Left aligned menu below button -->
     
-    <div class="locate-thumbnail-symbol"></div>
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
-    <!-- Pin on top -->
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-os%E6%A6%82%E8%BF%B0"><span class="post-toc-text">1 os概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E5%A4%84%E7%90%86%E6%9C%BA%E7%AE%A1%E7%90%86"><span class="post-toc-text">2 处理机管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86"><span class="post-toc-text">3 存储器管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86-%E9%87%8D%E7%82%B9%E7%9C%8B%E8%BF%99%E9%87%8C"><span class="post-toc-text">4 文件管理[^ 重点看这里]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%EF%BC%9A%E6%96%87%E4%BB%B6%E5%90%8D%E3%80%81%E5%86%85%E5%AE%B9%E3%80%81%E5%B1%9E%E6%80%A7-%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%81%E9%95%BF%E5%BA%A6%E3%80%81%E4%BD%8D%E7%BD%AE%E3%80%81%E5%BB%BA%E7%AB%8B%E6%97%B6%E9%97%B4"><span class="post-toc-text">文件：文件名、内容、属性[文件类型、长度、位置、建立时间]</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AOS%E4%B8%AD%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E9%82%A3%E9%83%A8%E5%88%86%E8%BD%AF%E4%BB%B6-%E7%AE%A1%E7%90%86%E7%9A%84%E6%96%87%E4%BB%B6-%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="post-toc-text">文件系统：OS中管理文件的那部分软件+管理的文件+文件属性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E4%B8%A4%E7%A7%8D%E7%BB%93%E6%9E%84"><span class="post-toc-text">两种结构</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="post-toc-text">5 设备管理</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * <%= theme.thumbnail.random_amount %> + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '<%= url_for(theme.img.random_thumbnail) %>' + randomNum + '.jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                暑期系列：操作系统
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>NENEIIII</strong>
+        <span>Sep 04, 2021</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E6%9A%91%E6%9C%9F%E7%B3%BB%E5%88%97/" rel="tag">暑期系列</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
         
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/09/04/os/">暑期系列：操作系统</a></p>
-    </div>
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=暑期系列：操作系统&url=https://heimdall-nss.github.io/2021/09/04/os/index.html&pic=https://heimdall-nss.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1 os概述
-功能
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=暑期系列：操作系统&url=https://heimdall-nss.github.io/2021/09/04/os/index.html&via=NENEIIII" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
 
-    用户接口
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://heimdall-nss.github.io/2021/09/04/os/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://heimdall-nss.github.io/2021/09/04/os/index.html&title=暑期系列：操作系统" target="_blank">
+            <li class="mdl-menu__item">
+                Share to LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=COOLGuysneverSleep&title=暑期系列：操作系统&summary=欢迎光临&pics=https://heimdall-nss.github.io/img/favicon.png&url=https://heimdall-nss.github.io/2021/09/04/os/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="1-os概述"><a href="#1-os概述" class="headerlink" title="1 os概述"></a>1 os概述</h2><ul>
+<li>功能</li>
+</ul>
+<pre><code>    用户接口
     文件管理
     存储器管理
     处理机管理
     设备管理
-
-
-特征
-
-    并发：一段时间 多道程序 宏观同时
+</code></pre>
+<ul>
+<li>特征</li>
+</ul>
+<pre><code>    并发：一段时间 多道程序 宏观同时
     虚拟：一个物理--&gt;多个逻辑 多个物理--&gt;一个逻辑
     共享：互斥共享 "同时"共享
     异步(不确定性)：[执行顺序] [执行时间]
-
-
-CPU执行状态
-
-操作系统执行在核心态下
+</code></pre>
+<ul>
+<li>CPU执行状态</li>
+</ul>
+<pre><code>操作系统执行在核心态下
 原语执行在核心态下
 用户程序执行在用户态下
-
-2 处理机管理
-进程与线程
-
-    进程：系统资源分配的基本单位
+</code></pre>
+<h2 id="2-处理机管理"><a href="#2-处理机管理" class="headerlink" title="2 处理机管理"></a>2 处理机管理</h2><ul>
+<li>进程与线程</li>
+</ul>
+<pre><code>    进程：系统资源分配的基本单位
     线程：独立调度的基本单位 共享资源有：**sds*
+</code></pre>
+<blockquote>
+<p>进程五态<img src="/2021/09/04/os/image-20210813132505956.png" alt="image-20210813132505956" style="zoom:50%;"></p>
+</blockquote>
+<ul>
+<li><p>进程控制<br>实现手段：进程控制原语<br>功能：创建、撤销进程，进程的状态转换</p>
+</li>
+<li><p>进程同步机制<br>目的：保证进程间的两种制约关系</p>
+<ol>
+<li><p>同步：多进程<strong>合作完成</strong>任务时要按照一定的时序执行</p>
+</li>
+<li><p>互斥：多个进程访问<strong>共享资源</strong>时要保证互斥</p>
+</li>
+</ol>
+<p>原则：</p>
+<ol>
+<li><p>空闲让进</p>
+</li>
+<li><p>忙则等待</p>
+</li>
+<li><p>有限等待</p>
+</li>
+<li><p>让权等待</p>
+</li>
+</ol>
+<p>信号量机制</p>
+<ol>
+<li><p>整数型<img src="/2021/09/04/os/image-20210813140742705.png" alt="image-20210813140742705" style="zoom: 33%;"></p>
+</li>
+<li><p>记录型<img src="/2021/09/04/os/image-20210813141014601.png" alt="image-20210813141014601" style="zoom:33%;"></p>
+</li>
+</ol>
+</li>
+<li><p>PV操作[^ 原理见OneNote-OS-进程管理-进程同步机制]</p>
+</li>
+</ul>
+<blockquote>
+<p>生产者-消费者问题(有界缓冲区)<br>读者-写者问题<br>哲学家就餐问题<br>睡眠理发师问题</p>
+</blockquote>
+<ul>
+<li>进程通信</li>
+</ul>
+<pre><code>    低级通信：信息量少(如用来同步发送的信号量)
+    高级通信：共享存储器(剪切板) 消息传递(mail like) 管道通信(2个之间)
+</code></pre>
+<ul>
+<li>进程调度</li>
+</ul>
+<pre><code>    FCFS
+    SJF
+    SRTF  - 抢
+    HRRF
+    HPF  - 抢
+    RR   - 抢
+    MFQ
+</code></pre>
+<ul>
+<li>死锁</li>
+</ul>
+<pre><code>    两个或多个进程被无限期地阻塞、相互等待
+    必须同时满足：互斥 请求与保持 不剥夺 环路等待
+    预防与避免
+</code></pre>
+<ul>
+<li>银行家算法–死锁避免</li>
+</ul>
+<pre><code>见OneNote-每日快速笔记-os答疑-第一问
+</code></pre>
+<h2 id="3-存储器管理"><a href="#3-存储器管理" class="headerlink" title="3 存储器管理"></a>3 存储器管理</h2><blockquote>
+<p>概念区分</p>
+</blockquote>
+<pre><code>物理地址空间（或物理空间、绝对空间）：由内存一系列存储单元所限定的地址范围；
+逻辑地址空间（用户编程空间）：由程序中逻辑地址组成的地址范围
+相对地址（或逻辑地址）：用户程序经编译之后的每个目标模块都从0开始顺序编址，这种用户编程所用的地址称为相对地址或逻辑地址
+绝对地址（或物理地址、内存地址）：内存是由若干存贮单元组成的，每个存贮单元有一个编号称为物理地址。
+地址变换（重定位）：把逻辑地址转换为相应物理地址的过程
+</code></pre>
+<blockquote>
+<p>程序如何装入内存：编译-&gt;链接-&gt;装入</p>
+</blockquote>
+<ol>
+<li>三种链接方式 : 链接程序将目标程序和所需库函数链接在一起，形成完整的<strong>装入模块</strong></li>
+</ol>
+<pre><code>静态链接：事先链接完后不再拆开
+装入时动态链接：边装入边链接，发生一个外部模块调用后装入程序再去找相应模块装入内存
+运行时动态链接：执行时，发现调用的模块未装入内存时OS立即去找再装入内存，并把它链接到调用者模块上
+</code></pre>
+<ol start="2">
+<li>三种装入方式 : 装入程序将装入模块装入内存——涉及<strong>地址转换(重定位)</strong></li>
+</ol>
+<pre><code>绝对装入：编译时就可给出物理地址，在装入时不用再转换地址（只有单道程序才行）
+可重定位装入：静态重定位，装入时进行地址转换，且不再更改
+动态运行时装入：动态重定位，装入内存时不转换地址(指令地址寄存器还无地址)直至CPU来执行。允许程序在内存中移动
+</code></pre>
+<blockquote>
+<p>内存分配</p>
+</blockquote>
+<hr>
+<p>连续分配：单一连续 固定分区 动态分区[分配算法]<br>离散分配：<a target="_blank" rel="noopener" href="https://lixiang.blog.csdn.net/article/details/119214282">分页 分段</a><br>虚拟存储：具有请求调入功能和置换功能</p>
+<hr>
+<blockquote>
+<p>页面分配 页面置换算法</p>
+</blockquote>
+<pre><code>    分配:最开始为进程分配多少物理块
+        - 固定：平均 比例(大小) 优先权
+        - 可变：预分配 最小物理块
+    置换：最佳 FIFO LRU Clock LFU    
+</code></pre>
+<blockquote>
+<p>区分：os的缓存与CPU的缓存<br>    - 快表：地址映射机制中<br>    - 高速缓存：位于CPU和内存之间</p>
+</blockquote>
+<h2 id="4-文件管理-重点看这里"><a href="#4-文件管理-重点看这里" class="headerlink" title="4 文件管理[^ 重点看这里]"></a>4 文件管理[^ 重点看这里]</h2><ul>
+<li><p>文件和文件系统</p>
+<h5 id="文件：文件名、内容、属性-文件类型、长度、位置、建立时间"><a href="#文件：文件名、内容、属性-文件类型、长度、位置、建立时间" class="headerlink" title="文件：文件名、内容、属性[文件类型、长度、位置、建立时间]"></a>文件：文件名、内容、属性[文件类型、长度、位置、建立时间]</h5><p><mark>基本内容和属性信息被存储在存储器中</mark>,用户通过文件名来访问相应文件</p>
+<h5 id="文件系统：OS中管理文件的那部分软件-管理的文件-文件属性"><a href="#文件系统：OS中管理文件的那部分软件-管理的文件-文件属性" class="headerlink" title="文件系统：OS中管理文件的那部分软件+管理的文件+文件属性"></a>文件系统：OS中管理文件的那部分软件+管理的文件+文件属性</h5></li>
+<li><p>文件的逻辑结构：文件在用户面前所呈现的形式</p>
+<ol>
+<li><p>无结构文件–字符流式文件</p>
+</li>
+<li><p>有结构文件–记录式文件</p>
+<blockquote>
+<p>顺序文件: 按某种顺序排列形成的文件</p>
+</blockquote>
+<blockquote>
+<p>索引文件：建立一张索引表，每个记录在表中对应一个索引项，索引项按照记录中的某个关键字域排序<img src="/2021/09/04/os/image-20210817154306671.png" class title="image-20210817154306671"></p>
+</blockquote>
+<blockquote>
+<p>索引顺序文件： 将顺序文件中的所有记录分为若干组，每组的第一个记录在索引表中有对应表项，查找任意记录时，先据关键字查索引表（此时可采用各种查找算法），找到所在组的第一个记录，之后顺序查找该组。<img src="/2021/09/04/os/image-20210817154445255.png" class title="image-20210817154445255"></p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>物理结构：文件在<strong>外存</strong>上的存储组织形式</p>
+<ol>
+<li><p>磁带文件：磁带只能顺序访问(也即只有顺序结构)</p>
+</li>
+<li><p>磁盘文件：顺序存取、随机存取</p>
+<blockquote>
+<p>连续分配–顺序式文件结构–&gt;可采用顺序存取，也可以随机存取</p>
+<p>链接分配–链接式文件结构–&gt;隐式链接文件结构[^ 每个物理块<strong>自身</strong>存放下一物理块的链接指针]只能只能顺序存取，不能随机存取；显式链接文件结构[^ 各物理块指针显式地放在内存的一张表格FAT中]能顺序存取，能随机存取</p>
+<p>索引分配–索引式文件结构–&gt;可顺序存取，也可随机存取</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>文件目录：一种数据结构，标识文件及其物理地址</p>
+<h5 id="两种结构"><a href="#两种结构" class="headerlink" title="两种结构"></a>两种结构</h5><ol>
+<li>含索引节点[指向文件对应的描述信息节点]<img src="/2021/09/04/os/image-20210817153244643.png" alt="image-20210817153244643" style="zoom:45%;"></li>
+<li>hash方法<img src="/2021/09/04/os/image-20210817153505139.png" alt="image-20210817153505139" style="zoom:50%;"></li>
+</ol>
+</li>
+<li><p>文件共享：指系统应允许多个用户(进程)共享同一份文件。这样，在系统中只需保留该共享文件的一份副本</p>
+<blockquote>
+<p> 在文件目录中只设置文件名及指向相应索引结点的指针<img src="/2021/09/04/os/image-20210817153757724.png" alt="image-20210817153757724" style="zoom:33%;"></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="5-设备管理"><a href="#5-设备管理" class="headerlink" title="5 设备管理"></a>5 设备管理</h2><ul>
+<li><p>I/O设备</p>
+<ol>
+<li><p>从交换单位看——</p>
+<ol>
+<li>字符设备：传输单位&lt;字节&gt; ，不可寻址<br> 如：显示终端、键盘、打印机、异步通讯接口</li>
+<li>块设备：传输单位&lt;数据块&gt; ，可寻址<br> 如：磁盘(一个扇区)、摄像头(一帧)</li>
+</ol>
+</li>
+<li><p>从使用方式看——</p>
+<pre><code>i. 独占设备：打印机
+ii. 共享设备：磁带、磁盘
+iii. 虚拟设备：模拟独占设备的那部分共享设备的空间
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>设备管理的作用(功能)</p>
+<ol>
+<li>对设备的分配和回收</li>
+<li>对设备的控制</li>
+<li>管理缓冲区，平衡低速设备和高速处理器</li>
+<li>实现虚拟设备，提高并发度</li>
+</ol>
+</li>
+<li><p>I/O系统的层次结构</p>
+<img src="/2021/09/04/os/image-20210904094814100.png" class title="image-20210904094814100"></li>
+<li><p>设备控制方式：也即CPU与设备的并行方式</p>
+<ol>
+<li><p>程序直接控制：不断查询I/O控制器状态，就绪才进行下一步 </p>
+<p>【CPU全程参与】</p>
+</li>
+<li><p>中断驱动：例如–&gt;在输入时，当设备控制器收到CPU发来的读命令后，便去控制相应的输入设备读数据。一旦数据进入数据寄存器，控制器便通过控制线向CPU发送一中断信号，由CPU检查输入过程中是否出错，若无错，便向控制器发送取走数据的信号，然后再通过控制器及数据线，将数据写入内存指定单元中 </p>
+<p>【CPU只参与中断处理】</p>
+<p>【中断频率：每个字节传输完都要中断】</p>
+</li>
+<li><p>DMA驱动：DMAC直接与内存相连，与CPU分时复用内存，CPU只需驱动DMA然后数据控制全程在DMA控制下进行，结束时再向CPU发中断</p>
+<img src="/2021/09/04/os/image-20210825114618914.png" alt="image-20210825114618914" style="zoom:50%;">
+
+<p>【CPU工作时间：启动DMA，结束时处理中断】</p>
+<p>【中断频率：一次I/O指令能读写一个连续的数据块】</p>
+</li>
+<li><p>通道方式：是DMA方式的发展，把以数据块为单位的干预，减少到对一组数据块为单位的干预</p>
+<p>【CPU同样工作在开始和结束】</p>
+<p>【中断频率：一条I/O指令可以读写多个离散的数据块且将它们分别传送到不同的内存区域】</p>
+</li>
+</ol>
+<img src="/2021/09/04/os/image-20210825115627372.png" alt="image-20210825115627372" style="zoom:50%;"></li>
+<li><p>设备的分配</p>
+<ol>
+<li>算法：先来先服务 || 优先级高者优先</li>
+</ol>
+</li>
+</ul>
 
         
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/09/04/os/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
-            </div>
-            <div>
-                <strong>NENEIIII</strong>
-                <span>Sep 04, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
-              </span>
-            
+    
 
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    
 </div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/09/02/database/">暑期系列：数据库杂七杂八</a></p>
-    </div>
+                
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            写在^ 前面
-并发控制并发可能导致的三种不一致状态
-丢失修改
-
-写-写
-
-
-两个事务T2和T2读入同一数据并修改，T2的提交结果破坏了T1提交的结果，导致T1的修改被丢失
-
-
-不可重复读
-
-读-修改
-
-
-读-删除
-
-
-读-插入
-
-
-读脏数据
-
-修改-读
-
-
-
-
-
-并发控制：正确调度并发操作，避免造成不一致性
-封锁技术
-
-
-写锁：其他事务不能读和写，也不能申请任何锁
-读锁：其它事务可以读，可以再申请读锁
-
-
-封锁协议：规定申请时间，持锁时长，释放时间
-
-一级协议：修改前必须加写锁，事务[^ 结束]后释放
-[^ 结束]: commit OR rollback
-
-
-
-
-
-
-冲突操作：读-写，写-写
-
-
-
-冲突可串行化[前趋图画法]((13 封私信 / 19 条消息) 事务操作调度冲突可串行化的判断（通过前驱图） - 知乎 (zhihu.com))
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/09/02/database/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
-            </div>
-            <div>
-                <strong>NENEIIII</strong>
-                <span>Sep 02, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MzgzOC8zMDMxMQ==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
 </div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/">hexo主题Next-&gt;material切换踩坑</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天有空上来换个主题，顺便完善下一些效果
-
-[^ hexo-Material]: 以下只记录一些问题, hexo的相关配置省略
-Theme: [^ hexo-Material]来比力留言“将data-uid后的代码复制，然后打开主题配置文件_config.yml，找到livere_uid，将代码复制到其后即可：”
-livere_uid: "你的代码"
-
-问 这里代码外有””吗？
-
- 傻了，人家说的是data-uid之后的代码
-
-忽略要编译的文件
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/09/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
-            </div>
-            <div>
-                <strong>NENEIIII</strong>
-                <span>Sep 02, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
 </div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/08/23/test/">测试用内容不重要</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            写在front-matter的`excerpt`后的文字是预览的内容
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/08/23/test/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
-            </div>
-            <div>
-                <strong>NENEIIII</strong>
-                <span>Aug 23, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/08/11/computer%20consistency/">暑期系列：计算机组成原理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1 计算机系统简介
-硬件：主机、外设等
-
-软件：程序
-
-
-2 计算机基本组成graph LR
-A[运算器] --&gt;B(CPU)
-C[控制器] --&gt;B
-B --&gt;E
-D[存储器] --&gt;E(主机)
-F[输入设备] --&gt;H(I/O设备)
-G[输出设备] --&gt;H
-style A fill:#ccf
-style C fill:#ccf
-style D fill:#ccf
-style F fill:#ccf
-style G fill:#ccf
-
-
-一条指令[操作码|地址码]的完成过程：
-
-取指令：从MAR–&gt;IR (PC 指向下一条指令的地址)
-
-指令译码：ID获取指令类别和操作数
-
-指令执行：
-
-访存取数：根据指令地址码访问主存取到对应操作数
-
-结果写回：CPU内部寄存器 || 主存..
-
-
-3 计算机硬件主要技术指标
-机器字长：CPU一次能处理的数据位数(取决于CPU寄存器位数)
-运算速度
-CPI 执行一条指令所需时钟周期数MIPS 每秒执行百万条指令FLOPS 每秒浮点运算次数
-
-
-主存容量(内存)
-64K × 32位 ：MAR 16个 存储字长32位1KB = 2 13 b
-
-
-辅存容量(外存) ：1GB = 2 30 B 、1B = 8b（bit）
-
-4 存储器
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/08/11/computer%20consistency/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
-            </div>
-            <div>
-                <strong>NENEIIII</strong>
-                <span>Aug 11, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/07/18/hello-world/">Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-
-More info: Writing
-Run server$ hexo server
-
-More info: Server
-Generate static files$ hexo generate
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/07/18/hello-world/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="NENEIIII's avatar">
-            </div>
-            <div>
-                <strong>NENEIIII</strong>
-                <span>Jul 18, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 83 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material%20(' + randomNum + ').jpg');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
     }
-</script>
+</style>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2021/09/02/database/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1492,31 +1389,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
-        <script type="text/ls-javascript" id="search-local-js-script">
-    var searchFunc=function(c,a,b){$.ajax({url:c,dataType:"xml",success:function(e){var d=$("entry",e).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get();var g=document.getElementById(a);var f=document.getElementById(b);g.addEventListener("input",function(){var i='<ul class="search-result-list">';var h=this.value.trim().toLowerCase().split(/[\s\-]+/);f.innerHTML="";if(this.value.trim().length<=0){return}d.forEach(function(o){var n=true;var s=[];var t=o.title.trim().toLowerCase();var m=o.content.trim().replace(/<[^>]+>/g,"").toLowerCase();var j=o.url;var u=-1;var q=-1;var p=-1;if(t!==""&&m!==""){h.forEach(function(w,x){u=t.indexOf(w);q=m.indexOf(w);if(u<0&&q<0){n=false}else{if(q<0){q=0}if(x===0){p=q}}})}if(n){i+='<li><a href="'+j+'" class="search-result-title" target="_blank">'+t;var r=o.content.trim().replace(/<[^>]+>/g,"");if(p>=0){var k=p-6;var l=p+6;if(k<0){k=0}if(k===0){l=10}if(l>r.length){l=r.length}var v=r.substr(k,l);h.forEach(function(w){var x=new RegExp(w,"gi");v=v.replace(x,'<em class="search-keyword">'+w+"</em>")});i+='<p class="search-result">'+v+"...</p></a>"}}});f.innerHTML=i})}})};
-</script>
-
-
-        <script type="text/ls-javascript" id="search-input-script">
-            var inputArea = document.querySelector('#search');
-            var getSearchFile = function() {
-                var path = 'search.xml';
-                searchFunc(path, 'search', 'local-search-result');
-            }
-
-            if(inputArea) {
-                inputArea.onfocus = function() {
-                    getSearchFile();
-                }
-            }
-        </script>
-    
-
 
 <!-- UC Browser Compatible -->
 <script>
@@ -1532,6 +1404,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1545,11 +1421,36 @@ It will not impact the appearance and can give developers a lot of support :)
 
     
         
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script type="text/javascript" src="/js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->
